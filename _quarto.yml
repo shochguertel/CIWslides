@@ -1,0 +1,28 @@
+title: "Choices, Inequality and Welfare"
+title-slide-attributes:
+    data-background-image: images/golfcourse.png
+    data-background-size: cover
+    data-background-opacity: "0.67"
+subtitle: "University Minor Economics"
+author: 
+  - name: "Stefan Hochguertel"
+    email: s.hochguertel@vu.nl
+    affiliations: Vrije Universiteit Amsterdam
+format:
+  #clean-revealjs:
+  revealjs:
+    embed-resources: false # must be false for desmos pics to work
+    link-external-icon: true
+    slide-number: true
+    sc-sb-title: true
+    subtitle-as-header: false
+    preview-links: auto
+    logo: images/VUnobg.png
+    smaller: true
+    footer: "{{< meta subtitle >}} • {{< meta title >}} • {{< meta author >}}"
+filters: 
+  - parse-latex
+  - reveal-header
+slide-level: 3
+number-sections: true
+number-depth: 2
