@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="ciw_slides_3_2024_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ciw_slides_3_2024_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ciw_slides_3_2024_files/libs/quarto-html/popper.min.js"></script>
+<script src="ciw_slides_3_2024_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ciw_slides_3_2024_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ciw_slides_3_2024_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ciw_slides_3_2024_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="ciw_slides_3_2024_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ciw_slides_3_2024_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="ciw_slides_3_2024_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="ciw_slides_3_2024_files/libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="ciw_slides_3_2024_files/libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.57">
+
+  <meta name="author" content="Stefan Hochguertel">
+  <meta name="dcterms.date" content="2024-11-04">
+  <title>Choices, Inequality and Welfare</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="ciw_slides_3_2024_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ciw_slides_3_2024_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="ciw_slides_3_2024_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="ciw_slides_3_2024_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ciw_slides_3_2024_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ciw_slides_3_2024_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ciw_slides_3_2024_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="images/golfcourse.png" data-background-opacity="0.67" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title">Choices, Inequality and Welfare</h1>
+  <p class="subtitle">University Minor Economics</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Stefan Hochguertel 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:s.hochguertel@vu.nl">s.hochguertel@vu.nl</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Vrije Universiteit Amsterdam
+          </p>
+    </div>
+</div>
+
+  <p class="date">2024-11-04</p>
+</section>
+<section>
+<section id="inequality-poverty" class="title-slide slide level1 center" data-background-color="#40666e" data-number="3">
+<h1><span class="header-section-number">3</span> Inequality &amp; Poverty</h1>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="poverty-inequality-and-growth-world-1800-2020" class="slide level3">
+<h3>Poverty, Inequality and Growth, World 1800-2020</h3>
+<iframe src="//www.gapminder.org/tools/?embedded=true#$model$markers$mountain$data$filter$dimensions$geo$/$or@$un_state:true;;;;;;&amp;encoding$order$data$concept:null&amp;constant=none;&amp;direction=asc;&amp;selected$data$filter$markers@=africa&amp;=americas&amp;=asia&amp;=europe;;;;&amp;frame$value=1800;&amp;facet_row$data$constant=none;;;;&amp;billy$encoding$selected$data$;;;;;;&amp;chart-type=mountain&amp;url=v2" style="width: 100%; height: 500px; margin: 0 0 0 0; border: 1px solid grey;" allowfullscreen=""></iframe>
+<p><a href="https://www.gapminder.org">source: gapminder.org</a></p>
+<p><a href="https://staff.math.su.se/hoehle/blog/2018/07/02/factfulness.html">notes on methodology</a></p>
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+<section id="inequality" class="title-slide slide level2 center" data-number="3.1">
+<h2><span class="header-section-number">3.1</span> Inequality</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="inequality-of-income-consumption-or-wealth" class="slide level3">
+<h3>Inequality of Income, Consumption or Wealth</h3>
+<ul>
+<li>to quantify inequality, often one uses microdata on (household) income</li>
+<li>this could be survey or administrative data
+<ul>
+<li>since the introduction of the income tax, about 100 years ago, governments know who reports how much income, and they keep administrative registers</li>
+</ul></li>
+<li>consumption is only available from survey data, and often preferred in the context of developing countries
+<ul>
+<li>smallholder farmers (consumer-producers) may consume what they produce, their market income may underestimate their welfare levels</li>
+<li>self-employment is partly associated with income tax evasion</li>
+<li>consumption tends to fluctuate less as households engage in consumption smoothing over time, and across members of the family or household</li>
+</ul></li>
+<li>recent attention to wealth inequality, as microeconomic survey data became available, but since many countries do not have a comprehensive wealth tax, reliable measures of wealth at the micro level are scarce</li>
+</ul>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="statistical-distributions" class="slide level3">
+<h3>Statistical Distributions</h3>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">PDF, CDF</a></li><li><a href="#tabset-1-2">Graph</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>measuring inequality is about describing and quantifying inequality of some distribution of a variable of interest (income, wealth, consumption) in statistical terms</li>
+<li>let <span class="math inline">\(Y\)</span> denote the variable of interest</li>
+<li>main idea: take the values <span class="math inline">\(Y\)</span> (or a random sample) as given and study the aspects of its distribution that tell how `different’ people are from one another</li>
+<li>if <span class="math inline">\(Y\)</span> is continuously distributed, then its distribution can be represented by
+<ul>
+<li>a probability density function (pdf) <span class="math inline">\(f_Y(y)\)</span>, or</li>
+<li>a cumulative distribution function (cdf) <span class="math inline">\(F_Y(y)=\int_{\min\{y\}}^y f(z) \text{d}z\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<div title="Play with the Normal Distribution, change standard deviation $\sigma$">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Play with the Normal Distribution, change standard deviation <span class="math inline">\(\sigma\)</span></strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://www.desmos.com/calculator/7ah5i4xtr4?embed" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<iframe src="https://www.desmos.com/calculator/idgyawegnv?embed" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="measuring-inequality-gini-coefficient" class="slide level3">
+<h3>Measuring Inequality: <span class="smallcaps">Gini</span> Coefficient</h3>
+<iframe src="https://ourworldindata.org/grapher/gini-index-around-2015-1990-2015-countries-vs-gini-index-around-1990-1990-2015-countries" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="long-run-inequality-top-1-share" class="slide level3">
+<h3>Long-Run Inequality: Top 1% Share</h3>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://ourworldindata.org/grapher/income-share-top-1-before-tax-wid-extrapolations?time=1910..latest&amp;country=USA~CAN~GBR~ITA" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
+</div><div class="column" style="width:50%;">
+<iframe src="https://ourworldindata.org/grapher/income-share-top-1-before-tax-wid-extrapolations?time=1910..latest&amp;country=JPN~SWE~ESP~FRA~NLD" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="lorenz-curve-and-gini-coefficient" class="slide level3">
+<h3><span class="smallcaps">Lorenz</span> Curve and <span class="smallcaps">Gini</span> Coefficient</h3>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Description</a></li><li><a href="#tabset-2-2">Illustration</a></li><li><a href="#tabset-2-3">Alternatives<span class="math inline">\(^\star\)</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>most popular measure for inequality are <span class="smallcaps">Gini</span> coefficient and <span class="smallcaps">Lorenz</span> curve <span class="math inline">\(\Lambda\)</span></li>
+<li><span class="math inline">\(\Lambda\)</span> encompasses all values of the distribution and can be derived from the pdf or cdf</li>
+</ul>
+<div title="We shall derive $\Lambda$ graphically in class.">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>We shall derive <span class="math inline">\(\Lambda\)</span> graphically in class.</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>starting point are the values of <span class="math inline">\(Y\)</span> in <em>ascending</em> order</li>
+<li>determine <span class="math inline">\(p\)</span>, the cumulative percentile of individuals considered (runs from 0 to 100%)</li>
+<li><span class="math inline">\(\Lambda\)</span> measures for each <span class="math inline">\(p\)</span> the cumulative share of income in total income (runs from 0 to 100%)</li>
+<li><span class="math inline">\(\Lambda\)</span> is typically below the 45<span class="math inline">\(^\circ\)</span>line, monotonically increasing and convex</li>
+<li><span class="smallcaps">Gini</span> coefficient of inequality is based on the cumulative difference between the line of equality and the <span class="smallcaps">Lorenz</span> curve</li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/lorenz1.png" style="width:75.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/lorenz2.png" style="width:75.0%"></p>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-2-3">
+<p>There are many different statistical summary measures of inequality. The following are examples of measures conforming to the</p>
+<div title="[Pigou-Dalton]{.smallcaps} Principle">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><span class="smallcaps">Pigou-Dalton</span> Principle</strong></p>
+</div>
+<div class="callout-content">
+<p>i.e., under a transfer from a rich to a poor individual that preserves both ranking of individuals and total income, inequality must decrease.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><span class="math display">\[\begin{aligned}
+\mbox{CV}^x   &amp;=&amp; \frac{\sigma}{\mu\sqrt{N-1}} \\
+\mbox{Gini} &amp;=&amp; \frac{1}{2N^2\mu} \sum_i \sum_j | y_i-y_j|
+\end{aligned}\]</span></p>
+</div><div class="column" style="width:55%;">
+<p><span class="math display">\[\begin{aligned}
+\mbox{Theil} &amp;=&amp; \frac{1}{N \ln N} \sum \frac{y_i}{\mu} \ln \frac{y_i}{\mu} \\
+^\dagger\mbox{Atkinson}_\varepsilon &amp;=&amp; 1 - \left[\frac{1}{N} \sum \left( \frac{y_i}{\mu} \right)^{1-\varepsilon} \right]^{\frac{1}{1-\varepsilon}}
+\end{aligned}\]</span></p>
+</div><p><span class="math inline">\(^x\)</span>CV is the coefficient of variation (altogether different from the concept of compensating variation) <span class="math inline">\(^\dagger\varepsilon\)</span> is a policy parameter that expresses society’s degree of <span class="alert">inequality aversion</span></p>
+</div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="inequality-and-policy" class="slide level3">
+<h3>Inequality and Policy</h3>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Redistribution</a></li><li><a href="#tabset-3-2">Illustration</a></li><li><a href="#tabset-3-3">Notes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>If SWF suggests that inequality is of policy concern, then redistribution, typically from the rich to the poor, is a possible choice</li>
+<li>note: such redistribution does not tackle the causes of inequality, rather its symptoms</li>
+<li>distribution of incomes <span class="math inline">\(\{y_1,\ldots,y_N\}\)</span></li>
+<li>Budget-neutral redistribution: tax everyone using proportional income tax <span class="math inline">\(\tau\)</span>, redistribute total tax revenue <span class="math inline">\(\sum_i \tau y_i\)</span> as a lump sum to everyone: <span class="math display">\[
+\mbox{after-tax income } \tilde{y}_i = y_i(1-\tau)+\frac{\tau \sum_i  y_i}{N}
+\]</span></li>
+<li>assume mean income does not change with redistribution (see notes)<span class="math inline">\(^\dagger\)</span></li>
+</ul>
+<div title="We shall show the effect of redistribution on $\Lambda$ graphically in class.">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>We shall show the effect of redistribution on <span class="math inline">\(\Lambda\)</span> graphically in class.</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/lorenz3.png" style="width:75.0%"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>redistribution shifts the <span class="math inline">\(\Lambda\)</span> curve towards the line of equality and reduces the <span class="smallcaps">Gini</span></li>
+<li><span class="smallcaps">Atkinson</span> has shown that social welfare, as measured through any concave SWF, increases with such redistribution (see notes)<span class="math inline">\(^\ddagger\)</span></li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-3-3">
+<ul>
+<li><span class="math inline">\(^\dagger\)</span> ideally, one should take into account behavioral effects of redistributional taxation, that is, redistribution may be associated with (possibly large) negative effects on labor supply and earnings; in that case, society “buys” more equality with “less efficiency” and lower mean income (see the equity/efficiency trade-off, and the Second Best)</li>
+<li><span class="math inline">\(^\ddagger\)</span> <span class="smallcaps">Lorenz</span> curves such as <span class="math inline">\(\Lambda\)</span> and <span class="math inline">\(\Lambda'\)</span> curves might cross one another; in that case, it is unclear from those curves alone which distribution has more inequality</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+
+<section id="poverty" class="title-slide slide level2 center" data-number="3.2">
+<h2><span class="header-section-number">3.2</span> Poverty</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="poverty-1" class="slide level3">
+<h3>Poverty</h3>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Definition</a></li><li><a href="#tabset-4-2">Aim of Measurement</a></li><li><a href="#tabset-4-3">Policies</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p>Poverty, specifically</p>
+<ul>
+<li>lack of command over commodities
+<ul>
+<li>“… a severe constriction of the choice set [over commodities]” (<span class="smallcaps">Harold Watts</span>)</li>
+</ul></li>
+<li>Lack of specific consumptions in terms of quantity or quality
+<ul>
+<li>e.g.&nbsp;too little food energy intake, too little of specific nutrients, leaking roof, …</li>
+</ul></li>
+</ul>
+<p>Poverty, more generally</p>
+<ul>
+<li>lack of “welfare” in wider sense
+<ul>
+<li>e.g.&nbsp;lack of “capability”: inability to achieve certain “functionings”</li>
+<li>“beings and doings” (Amartya <span class="smallcaps">Sen</span>)</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>supply evidence / quantitative data to inform policy on the extent, developments/trends, and severity of poverty</li>
+<li>keep poor people on the political agenda</li>
+</ul>
+</div>
+<div id="tabset-4-3">
+<ul>
+<li>Growth strategy
+<ul>
+<li>Has poverty increased? Did growth help the poor? How did relative price changesaffect the poor? What is the impact of food price fluctuations? Who were the losers and who were the gainersfrom economy-wide policy reforms?</li>
+</ul></li>
+<li>Social Spending
+<ul>
+<li>Who uses public services? At what cost? Who benefits from government subsidies? On average, versus at the margin? Who will be hurt by retrenchment?</li>
+</ul></li>
+<li>Targeted Interventions
+<ul>
+<li>Who are the target groups? How should transfers be allocated? How much impact will they have on poverty?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="canonical-poverty-measures" class="slide level3">
+<h3>Canonical Poverty Measures</h3>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Measures</a></li><li><a href="#tabset-5-2">Graph</a></li><li><a href="#tabset-5-3">Math<span class="math inline">\(^\star\)</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Canonical statistical measures of poverty (Poverty Indices, PI)</p>
+<ul>
+<li><strong>headcount ratio</strong> (HC): what percentage of population has income below poverty line?
+<ul>
+<li>easy to measure and understand</li>
+</ul></li>
+<li><strong>poverty gap</strong> (PG): what is the average relative distance of the poor from the poverty line?
+<ul>
+<li>reflects (average) depth of poverty</li>
+</ul></li>
+<li><strong>squared PG</strong> (SPG): what is the average relative squared distance of the poor from the poverty line?
+<ul>
+<li>reflects severity of poverty, as it gives the highest weight to the poorest</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-5-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://edu.nl/ujtqp" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>the graph shows the three canonical measures</li>
+<li>for a mathematical expression check the Math tab</li>
+</ul>
+<div title="Get the hang of poverty measures!">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Get the hang of poverty measures!</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>shift the poverty line to see how poverty measures change</li>
+<li>click the links to see the implicit weighting scheme</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-5-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The <span class="smallcaps">Foster-Greer-Thorbecke</span> (FGT) index captures all three PIs <span class="math display">\[
+FGT_{\alpha }={\frac {1}{N}}\sum _{i=1}^{H}\left({\frac {z-y_{i}}{z}}\right)^{\alpha }
+\]</span></p>
+<ul>
+<li><span class="math inline">\(y_i\)</span> individual income, <span class="math inline">\(i=1,\ldots,N\)</span></li>
+<li><span class="math inline">\(z\)</span> poverty line</li>
+<li><span class="math inline">\(N\)</span> number of people</li>
+<li><span class="math inline">\(H\)</span> number of poor (incomes below <span class="math inline">\(z\)</span>)</li>
+<li><span class="math inline">\(\alpha\)</span>: definitional parameter, <span class="math inline">\(\in \{0,1,2\}\)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><span class="math inline">\(\alpha=0\)</span>: HC: <span class="math inline">\(\displaystyle FGT_{0} = \frac{H}{N}\)</span></li>
+<li><span class="math inline">\(\alpha=1\)</span>: PG: <span class="math inline">\(\displaystyle FGT_{1} = {\frac {1}{N}}\sum _{i=1}^{H}\left({\frac {z-y_{i}}{z}}\right) = FGT_{0} \cdot \bar{y}_p\)</span>
+<ul>
+<li><span class="math inline">\(\bar{y}_p\)</span> avg income of the poor</li>
+</ul></li>
+<li><span class="math inline">\(\alpha=2\)</span>: SPG: <span class="math inline">\(\displaystyle FGT_{2} = {\frac {1}{N}}\sum _{i=1}^{H}\left({\frac {z-y_{i}}{z}}\right)^{2}\)</span></li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="poverty-relief-measures-and-consumer-choice" class="slide level3">
+<h3>Poverty Relief Measures and Consumer Choice</h3>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Tools</a></li><li><a href="#tabset-7-2">In-Kind</a></li><li><a href="#tabset-7-3">CV</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<ul>
+<li>transfers are used to address poverty to targeted and identified individuals
+<ul>
+<li>in cash or in kind</li>
+</ul></li>
+<li>cash transfers can be used to
+<ul>
+<li>move individuals back to the poverty line in terms of disposable income
+<ul>
+<li>e.g., in inflationary periods</li>
+</ul></li>
+<li>counteract a price hike on specific goods
+<ul>
+<li>e.g., using the idea of <strong>compensating variation</strong></li>
+</ul></li>
+</ul></li>
+<li>in-kind transfers for particular expenditure categories (necessitities)
+<ul>
+<li>e.g., social/council housing; food stamps/coupons/special debit cards; reduced public transport fares; access to health services</li>
+<li>in-kind transfers reduce the choice set</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-7-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/inkind.png" style="width:75.0%"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>in-kind benefit is tied to consumption of good <span class="math inline">\(x_1\)</span></li>
+<li>it cannot be (directly) exchanged for good <span class="math inline">\(x_2\)</span>
+<ul>
+<li>there is a kink at <span class="math inline">\(E_2\)</span> on the red BC</li>
+<li>individual might choose to consume at the kink</li>
+</ul></li>
+<li>cash benefit is fully fungible (grey BC), there is no kink, and it might afford higher utility at <span class="math inline">\(E_3\)</span></li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-7-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:35%;">
+<ul>
+<li>CV restores welfare to the level of utility that was obtained before the price hike</li>
+<li>this involves a money transfer to recipients</li>
+<li>the size of the transfer is meant not to make recipients better off than they had been before the price hike</li>
+<li>instead it corresponds to the cheapest compensation from the point of view of the government that leaves the recipient indifferent to experiencing and not experiencing the price hike</li>
+</ul>
+</div><div class="column" style="width:65%;">
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">1</a></li><li><a href="#tabset-6-2">2</a></li><li><a href="#tabset-6-3">3</a></li><li><a href="#tabset-6-4">4</a></li><li><a href="#tabset-6-5">5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<p><img data-src="images/shec_compvar_Page_04.png"></p>
+</div>
+<div id="tabset-6-2">
+<p><img data-src="images/shec_compvar_Page_05.png"></p>
+</div>
+<div id="tabset-6-3">
+<p><img data-src="images/shec_compvar_Page_06.png"></p>
+</div>
+<div id="tabset-6-4">
+<p><img data-src="images/shec_compvar_Page_07.png"></p>
+</div>
+<div id="tabset-6-5">
+<p><img data-src="images/shec_compvar_Page_08.png"></p>
+</div>
+</div>
+</div>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="anti-poverty-policy-and-labor-supply" class="slide level3">
+<h3>Anti-Poverty Policy and Labor Supply</h3>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Tools</a></li><li><a href="#tabset-8-2">Minimum Wage</a></li><li><a href="#tabset-8-3">UBI</a></li><li><a href="#tabset-8-4">Means Test</a></li><li><a href="#tabset-8-5">EITC</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<ul>
+<li>citizens need to be encouraged to earn their own income and be self-reliant</li>
+<li>enabling people to earn a living wage is part of the objective</li>
+</ul>
+<p>We look at the following policy tools:</p>
+<ul>
+<li>minimum wage (floor on hourly wages, irrespective of skill level or experience)</li>
+<li>unconditional basic income (lump-sum payment to all, no strings attached)</li>
+<li>means-tested benefits (benefits exceeding own earnings up to the poverty line)</li>
+<li>earned-income tax credit (targeted wage subsidy, turning stepwise into tax)</li>
+</ul>
+<div title="Policy can have unintended consequences (e.g., through perverse incentives)">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Policy can have unintended consequences (e.g., through perverse incentives)</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-8-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://edu.nl/ybftg" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>minimum wage has, as any other wage rate <span class="math inline">\(w\)</span> change two effects on labor supply
+<ul>
+<li>an income effect</li>
+<li>a substitution effect</li>
+</ul></li>
+<li>there is the possibility that at some level of <span class="math inline">\(w\)</span> labor supply decreases</li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-8-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/UBI.png" style="width:67.0%"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Universal Basic Income is an unconditional fixed benefit
+<ul>
+<li>possibily while removing all other conditional transfers</li>
+</ul></li>
+<li>UBI shifts the budget constraint up
+<ul>
+<li>there may be income effects on labor supply, whose sign depends on indifference curve</li>
+<li>no substitution effects</li>
+</ul></li>
+<li>in reality: UBI is almost never truly universal, but there are only few experiments (e.g.&nbsp;Finland)</li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-8-4">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/meanstest.png" style="width:75.0%"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>benefit <span class="math inline">\(b\)</span> should bring the individual to the poverty line <span class="math inline">\(y_{\min}\)</span></li>
+<li>but will be cut accordingly as recipient’s own means (earnings, wealth) rise</li>
+<li>implies an implicit tax rate of 100%
+<ul>
+<li>note the 2 kinks in the BC, expecially at <span class="math inline">\(E_2\)</span> where people might stick</li>
+<li>raises the possibility of induced non-participation, and subsequently a poverty trap (work does not pay enough)</li>
+</ul></li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-8-5">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/EITC.png" style="width:75.0%"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Earned income tax credit has three phases</li>
+</ul>
+<ol type="1">
+<li>phase-in: wage subsidy increases <span class="math inline">\(w\)</span></li>
+<li>flat part: wage subsidy ceased</li>
+<li>phase-out: wage tax decreases <span class="math inline">\(w\)</span></li>
+</ol>
+<ul>
+<li>there are 3 kinks, the first one is possibly most salient</li>
+<li>keeps incentive to work, at least a small number of hours</li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+
+<section id="conclusions" class="title-slide slide level2 unnumbered center">
+<h2>Conclusions</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="summary" class="slide level3">
+<h3>Summary</h3>
+<ul>
+<li><span class="smallcaps">Lorenz</span> curve and <span class="smallcaps">Gini</span> coefficient as standard statistical measure for inequality assessment</li>
+<li>redistribution is welfare-enhancing under a convex SWF, and can be achieved using a simple budget-neutral tax-benefit system (assuming no behavioral response)</li>
+<li>poverty policy aims at providing a consumption floor</li>
+<li>benefit design can dis-/encourage labor supply (participation)</li>
+<li>in-kind provision: targeting and self-selection of the needy</li>
+<li>unintended side effect of means testing: discourage effort taking</li>
+<li>in a development context, poverty reduction is often eased by strong growth</li>
+<li>poverty profiling aims to identify who is poor for better targeting (<span class="math inline">\(\to\)</span>tutorial)</li>
+</ul>
+<div class="quarto-auto-generated-content">
+<p><img src="images/VUnobg.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>University Minor Economics • Choices, Inequality and Welfare • Stefan Hochguertel</p>
+</div>
+</div>
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ciw_slides_3_2024_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: '90%',
+
+        height: 800,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // default icon
+              link.classList.add("external");
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
