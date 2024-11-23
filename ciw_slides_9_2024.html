@@ -733,7 +733,7 @@ D_4 = 1 &amp;\quad\text{if}\quad \text{college}\quad (D_4=0, \text{ otherwise})
 <ul>
 <li><p>categorical (including binary) variables are treated using the Factor specification for regression in Jamovi</p></li>
 <li><p>use <code>nlsw88</code>, education variable: <code>grade</code>, coded from 0 to 18 years</p></li>
-<li><p>recode into four categories variable <code>educ</code><br> <code>Transform &gt; Formula Box &gt;</code> <br> <code>=IF(grade&gt;=0 and grade&lt;=11, 0, IF(grade==12, 1, IF(grade&gt;=13 and grade&lt;=15, 3, IF(grade&gt;=16 and grade&lt;=18, 4, -9) ) ) )</code></p></li>
+<li><p>recode into four categories variable <code>educ</code><br> <code>Transform &gt; Formula Box &gt;</code> <br> <code>=IF(grade&gt;=0 and grade&lt;=11, 1, IF(grade==12, 2, IF(grade&gt;=13 and grade&lt;=15, 3, IF(grade&gt;=16 and grade&lt;=18, 4, -9) ) ) )</code></p></li>
 <li><p>check<br> <code>Analyses &gt; Exploration &gt; Descriptives</code>, move <code>educ</code> <span class="math inline">\(\to\)</span> variables to see a breakdown</p></li>
 <li><p>regress<br> <code>Analyses &gt; Regression &gt; Linear Regression</code>, move <code>educ</code> <span class="math inline">\(\to\)</span> Factors<br></p>
 <ul>
@@ -741,6 +741,52 @@ D_4 = 1 &amp;\quad\text{if}\quad \text{college}\quad (D_4=0, \text{ otherwise})
 <li>this corresponds to including the respective dummy with a coefficient of zero</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="interaction-terms" class="slide level3">
+<h3>Interaction Terms</h3>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Binary / Categorical Interactions</a></li><li><a href="#tabset-7-2">Binary / Categorical Interactions with Continuous Variable</a></li><li><a href="#tabset-7-3">Jamovi</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<ul>
+<li>Let <span class="math inline">\(D_1\)</span> and <span class="math inline">\(D_2\)</span> be dummy variables <span class="math display">\[Y_i = \beta_0 + \beta_1 D_{1i}  + \beta_2 D_{2i} + \beta_3 (D_{1i} \times D_{2i}) + U_i\]</span></li>
+<li>then <span class="math inline">\(\beta_3\)</span> is the coefficient on an <strong>interaction term</strong></li>
+<li><span class="math inline">\((D_{1i} \times D_{2i})=1\)</span> only if both dummy variables are 1, and hence measures the joint occurrence of both ‘events’</li>
+<li>example: <span class="math inline">\(D_{1}\)</span> – married or not, <span class="math inline">\(D_2\)</span> – south or not
+<ul>
+<li><span class="math inline">\(\beta_1\)</span>: ‘effect’ of being married</li>
+<li><span class="math inline">\(\beta_2\)</span>: ‘effect’ of being from the south</li>
+<li><span class="math inline">\(\beta_1+\beta_3\)</span>: ‘effect’ of being married and from the south</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-7-2">
+<ul>
+<li>Let <span class="math inline">\(D\)</span> be a dummy variable and <span class="math inline">\(C\)</span> continuous <span class="math display">\[Y_i = \beta_0 + \beta_1 D_{i}  + \beta_2 C_{i} + \beta_3 (D_{i} \times C_{2}) + U_i\]</span></li>
+<li>then <span class="math inline">\(\beta_3\)</span> is the coefficient on an interaction term, allowing slopes on <span class="math inline">\(C\)</span> to differ</li>
+<li><span class="math inline">\((D_{i} \times C_{i})=C_{i}\)</span> only if dummy variable is 1</li>
+<li>example: <span class="math inline">\(D\)</span> – married or not, <span class="math inline">\(C\)</span> – age, <span class="math inline">\(\beta_2\)</span>: slope of age for unmarried, <span class="math inline">\(\beta_2+\beta_3\)</span>: slope of age for married</li>
+</ul>
+</div>
+<div id="tabset-7-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>for interaction effects, within the Linear Regression screen
+<ul>
+<li>open <code>&gt; Model Builder</code></li>
+<li>select Predictors to interact</li>
+<li>choose from the second arrow dropdown (interaction: All 2 way)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/jamovi_interact.png"></p>
+</div></div>
 </div>
 </div>
 </div>
@@ -774,9 +820,9 @@ D_4 = 1 &amp;\quad\text{if}\quad \text{college}\quad (D_4=0, \text{ otherwise})
 <section id="sampling-variability" class="slide level3">
 <h3>Sampling Variability</h3>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Distribution of Estimates</a></li><li><a href="#tabset-7-2">Statistical Inference</a></li><li><a href="#tabset-7-3">Notes: BLUE<span class="math inline">\(^\star\)</span></a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Distribution of Estimates</a></li><li><a href="#tabset-8-2">Statistical Inference</a></li><li><a href="#tabset-8-3">Notes: BLUE<span class="math inline">\(^\star\)</span></a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-8-1">
 <ul>
 <li>A <em>random sample</em> is just one realization of a draw from a population, so the sampling process could have thrown up a different set of data points.</li>
 </ul>
@@ -806,7 +852,7 @@ D_4 = 1 &amp;\quad\text{if}\quad \text{college}\quad (D_4=0, \text{ otherwise})
 <li>can consider confidence intervals, <span class="math inline">\(t\)</span> (or <span class="math inline">\(z\)</span>) values to perform hypothesis tests, e.g., <span class="math inline">\(H_0: \beta_j=\beta_j^0\)</span></li>
 </ul>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-8-2">
 <!-- multicolumn setup .................................................... -->
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -831,7 +877,7 @@ D_4 = 1 &amp;\quad\text{if}\quad \text{college}\quad (D_4=0, \text{ otherwise})
 </div>
 </div></div>
 </div>
-<div id="tabset-7-3">
+<div id="tabset-8-3">
 <ul>
 <li>The so-called <span class="smallcaps">Gauss-Markov</span> theorem states that the OLS estimator is BLUE: the best linear unbiased estimator.</li>
 <li>This is a very desirable property since it implies that OLS coefficient estimates have the smallest standard error (or the largest t-values) among all linear unbiased estimators, as long as conditions on the errors are met, including
@@ -908,15 +954,15 @@ Y_{1i}&amp;=\alpha+\delta_i + U_i \qquad \text{i's outcome if treated}
 <section id="selection-on-unobservables" class="slide level3">
 <h3>Selection on Unobservables</h3>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Issue</a></li><li><a href="#tabset-8-2">Example</a></li><li><a href="#tabset-8-3">Extension</a></li></ul>
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Issue</a></li><li><a href="#tabset-9-2">Example</a></li><li><a href="#tabset-9-3">Extension</a></li></ul>
 <div class="tab-content">
-<div id="tabset-8-1">
+<div id="tabset-9-1">
 <ul>
 <li>Treatment participation <span class="math inline">\(D_i\)</span> correlated to unobserved or unobservable characteristics that are merged into <span class="math inline">\(U_i\)</span></li>
 <li>this selective participation causes biased and inconsistent estimates for treatment effect because <span class="math inline">\(\text{corr}(D,U)\neq 0\)</span> (omitted var.&nbsp;bias: relevant characteristics not included)</li>
 </ul>
 </div>
-<div id="tabset-8-2">
+<div id="tabset-9-2">
 <ul>
 <li>teacher assigns those students to remedial teaching
 <ul>
@@ -925,7 +971,7 @@ Y_{1i}&amp;=\alpha+\delta_i + U_i \qquad \text{i's outcome if treated}
 </ul></li>
 </ul>
 </div>
-<div id="tabset-8-3">
+<div id="tabset-9-3">
 <ul>
 <li>instead, consider extended regression model<br>
 <span class="math display">\[Y_i=\alpha+\delta_iD_i+\beta X_i+U_i\]</span> including pre-determined characteristics used for assignment reduces the selection problem
