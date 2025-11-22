@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ciw_slides_lec9</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="_ciw_slides_lec9_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_ciw_slides_lec9_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="_ciw_slides_lec9_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="_ciw_slides_lec9_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="_ciw_slides_lec9_files/libs/quarto-html/popper.min.js"></script>
+<script src="_ciw_slides_lec9_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_ciw_slides_lec9_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_ciw_slides_lec9_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_ciw_slides_lec9_files/libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_ciw_slides_lec9_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_ciw_slides_lec9_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_ciw_slides_lec9_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="empirical-methods-in-economics" class="level1" data-background-color="#40666e">
+<h1 data-background-color="#40666e">Empirical Methods in Economics</h1>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+<section id="returns-to-education" class="level3">
+<h3 class="anchored" data-anchor-id="returns-to-education">Returns to Education</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Economics and Education</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Some Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Measuring Returns</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Perspective</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li>one of the most-tested economic relationships is that between wages and education because
+<ul>
+<li>wages are the most important source of income for most people</li>
+<li>education is the most important investment decision for anyone</li>
+<li>provision of access to education is one of the most effective equalizers in society</li>
+</ul></li>
+<li>what are the returns to education? (good investment?)</li>
+<li>how can this be quantified empirically?</li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<iframe src="https://oecdch.art/a2434ab29c" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ul>
+<li>the reason students keep studying may just be that they expect to earn higher wages in the future</li>
+<li>it is easy to establish that higher-educated earn more</li>
+<li>we can also deduce how much an extra year of schooling delivers in terms of extra wages (return to schooling)</li>
+<li>the canonical model to measuring the returns to educational investment is that of a <span class="smallcaps"><span class="smallcaps">Mincer</span></span>-earnings function <span class="math display">\[\text{log earnings} = \beta_0 + \beta_1 \; \text{years of schooling} + \beta_2 \; \text{experience} + \ldots\]</span> <span class="math inline">\(\beta_1\)</span> measures return to (an additional year of) schooling</li>
+</ul>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<ul>
+<li>real returns to education vary markedly across groups, countries, and time; good guess: 9% [3%-15%] per year of education, and correspondingly higher per degree program</li>
+<li>these are good direct returns for any investment, but note:
+<ul>
+<li>statistical uncertainty around such estimates</li>
+<li>estimate for <em>average</em> student; may not hold for every individual</li>
+<li>nonmonetary returns (health, happiness, fertility and marriage market success) and spillover effects on others (positive externality: reduced crime, civic participation, …) are not measured</li>
+</ul></li>
+<li>difficult: assess <em>direction of causality</em>:
+<ul>
+<li>do higher educated earn more <em>because</em> they are more productive?</li>
+<li>do high earners find it both easier to get education and to be more productive?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="estimation" class="level2">
+<h2 class="anchored" data-anchor-id="estimation">Estimation</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+<section id="linear-model-and-ordinary-least-squares" class="level3">
+<h3 class="anchored" data-anchor-id="linear-model-and-ordinary-least-squares">Linear Model and Ordinary Least Squares</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Linear Model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Graph</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Residual</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Estimation<span class="math inline">\(^\star\)</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false" href="">Nonlinear Variables</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-6" role="tab" aria-controls="tabset-2-6" aria-selected="false" href="">Jamovi</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ul>
+<li>Model relation between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>, allowing for disturbance <span class="math inline">\(U\)</span></li>
+<li>functional form postulate: model is <span class="alert">linear</span> <span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + U_i\]</span><br>
+where <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are unknown parameters</li>
+<li>assume we have a random sample of size <span class="math inline">\(N\)</span></li>
+<li>can estimate parameters (determine them from the observed variation in the data) by minimizing the sum of squared residuals</li>
+</ul>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="?var:desmos-fig-linear" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>click “edit graph on Desmos” to
+<ul>
+<li>see variation and covariation</li>
+<li>regression line</li>
+<li>squared residuals</li>
+</ul></li>
+<li>the data is a small subset of a larger data set <code>nlsw88.xlsx</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<ul>
+<li>define predictions of dependent variable/model as <span class="math display">\[\widehat{Y}_i=\widehat{\beta}_0+\widehat{\beta}_1 X_i\]</span> where <span class="math inline">\(\widehat{\beta}_0\)</span> and <span class="math inline">\(\widehat{\beta}_1\)</span> denote estimates</li>
+<li>rewrite model as <span class="math display">\[U_i = Y_i - (\beta_0 + \beta_1 X_i)\]</span> then the <span class="alert">residual</span> (=what’s not ‘explained’) is defined as <span class="math display">\[\widehat{U}_i = Y_i -\underbrace{ (\widehat{\beta}_0 + \widehat{\beta}_1 X_i)}_{\widehat{Y}_i} = Y_i - \widehat{Y}_i\]</span> it is a function of <span class="math inline">\(\widehat{\beta}_0\)</span> and <span class="math inline">\(\widehat{\beta}_1\)</span>: <span class="math inline">\(\widehat{U}_i(\widehat{\beta}_0,\widehat{\beta}_1)\)</span></li>
+</ul>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<ul>
+<li>Ordinary Least Squares (OLS) is a linear regression technique solving <span class="math display">\[ (\widehat{\beta}_0,\widehat{\beta}_1) \to \min \sum_{i=1}^n (\widehat{U}_i(\widehat{\beta}_0,\widehat{\beta}_1))^2\]</span></li>
+<li>solution can be shown to be <span class="math display">\[ \widehat{\beta}_0 = \overline{Y} - \widehat{\beta}_1 \overline{X}\qquad  \qquad      \widehat{\beta}_1 = \frac{\text{cov}(X,Y)}{\text{var}(X)}\]</span> where <span class="math display">\[
+\overline{Y} = \frac{1}{n}\sum_{i=1}^n Y_i \quad
+\text{var}(Y) = \frac{1}{n}\sum_{i=1}^n (Y_i-\overline{Y})^2 \quad
+\text{cov}(X,Y) = \frac{1}{n}\sum_{i=1}^n (Y_i-\overline{Y})(X_i-\overline{X})
+\]</span>
+<ul>
+<li>mean of predicted values <span class="math inline">\(=\)</span> mean of observed data, <span class="math inline">\(\overline{\widehat{Y}}=\overline{Y}\)</span> (by construction)</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
+<ul>
+<li>OLS is one of many (several) techniques suitable for the linear model</li>
+<li>the linear model as shown is linear in both variables and parameters</li>
+<li>important, however, is <em>linearity in parameters</em></li>
+<li>a formulation allowing for nonlinear terms in variables can also be a linear model</li>
+</ul>
+<section id="examples" class="level5">
+<h5 class="anchored" data-anchor-id="examples">Examples</h5>
+<p><span class="math display">\[
+\begin{split}
+Y_i &amp;= \beta_0 + \beta_1 X_i^2  + U_i \\
+\\
+Y_i &amp;= \beta_0 + \beta_1 \ln(X_i) + U_i
+\end{split}
+\]</span></p>
+<p>The nonlinear variables need to be transformed first <span class="math display">\[
+\begin{split}
+Y_i &amp;= \beta_0 + \beta_1 X2_i  + U_i; \qquad X2_i = X_i^2\\
+\\
+Y_i &amp;= \beta_0 + \beta_1 lX_i  + U_i; \qquad lX_i = \ln(X_i)
+\end{split}
+\]</span></p>
+</section>
+</div>
+<div id="tabset-2-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-6-tab">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>open data set and use regression:</strong><br></p>
+<p><code>Menu</code> (<span class="math inline">\(\equiv\)</span>) <code>&gt; Open &gt; Browse ...</code> <br> nlsw88.xlsx (2,246 observations) <br> <code>Analyses &gt; Regression &gt; Linear Regression</code> <br> move variables to:<br> <code>wage</code> <span class="math inline">\(\to\)</span> Dependent variable<br> <code>grade</code> <span class="math inline">\(\to\)</span> Covariates<br> (Hourly wage on Current grade completed)</p>
+<ul>
+<li>the table output will list the coefficient estimate <span class="math inline">\(\beta_0\)</span> labeled as <code>Intercept</code>, and <span class="math inline">\(\beta_1\)</span> by the associated variable name</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>transform (nonlinear) variables</strong></p>
+<p>e.g., <span class="math inline">\(lX = \ln(X)\)</span></p>
+<p><code>Variables &gt; Compute &gt; Formula &gt;</code> <span class="math inline">\(f_x=\)</span></p>
+<p><img src="images/jamovi_compute.png" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<!-- END multicolumn setup .................................................... -->
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="goodness-of-fit" class="level3">
+<h3 class="anchored" data-anchor-id="goodness-of-fit">Goodness of Fit</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">R-Squared</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">R-Squared<span class="math inline">\(^\star\)</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Jamovi</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<ul>
+<li>how well does the regression model ‘explain’ the data?</li>
+<li>we can measure the ratio of the variation in <span class="math inline">\(Y\)</span> that the model predicts to the variation of <span class="math inline">\(Y\)</span> observed in the data, and build the <span class="math inline">\(R^2 \in [0; 1]\)</span></li>
+<li>typically, the higher <span class="math inline">\(R^2\)</span>, the better the model’s fit, the less variation is unaccounted for</li>
+<li>however, <span class="alert">never maximize <span class="math inline">\(R^2\)</span></span> to the limit (<span class="math inline">\(\to 1\)</span>), since a misspecification is often associated with a (very) high <span class="math inline">\(R^2\)</span></li>
+</ul>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<ul>
+<li><p>define sums of squares (SS) <span class="math display">\[
+\begin{split}
+\text{total SS} &amp;\quad
+SS_\text{tot}=\sum_i (Y_i-\overline{Y})^2 \\
+\text{model SS} &amp;\quad
+SS_\text{mod}=\sum_i (\widehat{Y}_i -\overline{Y})^2 \\
+\text{residual SS} &amp;\quad
+SS_\text{res}=\sum_i (Y_i - \widehat{Y}_i)^2
+\end{split}
+\]</span> <span class="smaller fg" style="lightgray">note: <span class="math inline">\(SS_\text{mod}\)</span> aka ‘explained SS’ or ‘regression SS’</span></p></li>
+<li><p>can measure ‘goodness of fit’ as <span class="math display">\[R^2 \equiv 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}} = 1 - \frac{{\text{var}}_{\text{res}}}{{\text{var}}_{\text{tot}}}= \frac{SS_{\text{mod}}}{SS_{\text{tot}}}\]</span> i.e., one minus fraction of total variation unexplained by the model, or fraction of total variation explained by the model.</p></li>
+</ul>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>sums of squares (SS) can be displayed using an ANCOVA table</li>
+</ul>
+<p><code>Analyses &gt; ANOVA &gt; ANCOVA &gt; Model</code> <br> select: <code>sum of squares</code> “Type 1”</p>
+<p><span class="math inline">\(SS_{\text{mod}} = 4743.21+ 136.45+ 5179.23+ 7.03 = 10065.92\)</span> <br> <span class="math inline">\(SS_{\text{tot}} = SS_{\text{mod}} + SS_{\text{res}} 9873.64 + 64051.35 = 74117.27\)</span> <br></p>
+<p><span class="math inline">\(R^2 = \frac{SS_{\text{mod}}}{SS_{\text{tot}}} = \frac{10065.92}{74117.27} = 0.1358\)</span></p>
+</div><div class="column" style="width:40%;">
+<p><img src="images/jamovi_ancova.png" class="img-fluid" style="width:705.0%"></p>
+</div>
+</div>
+<!-- END multicolumn setup .................................................... -->
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="multiple-regression" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-regression">Multiple Regression</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">More Regressors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Goodness of Fit</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Notes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">Jamovi</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<ul>
+<li>extend model by adding more regressors, <span class="math display">\[Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + U_i\]</span> prediction based on both <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, <span class="math display">\[\widehat{Y}_i = \widehat{\beta}_0 + \widehat{\beta}_1 X_{1i} + \widehat{\beta}_2 X_{2i}\]</span></li>
+<li>residuals are as before <span class="math display">\[\widehat{U}_i = Y_i - \widehat{Y}_i\]</span></li>
+<li>predicted values are not on a ‘line’ but on a 2-dimensional plane</li>
+</ul>
+<div class="callout callout-style-default callout-important no-icon callout-empty-content callout-titled" title="Intuition Booster for Class Audience: will be shown in class only.">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Intuition Booster for Class Audience: will be shown in class only.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<ul>
+<li>adding in more regressors <span class="math inline">\(\to\)</span> higher-dimensional regression (hyper)‘plane’</li>
+<li>this object may tilt when regressors are added or removed</li>
+<li>R<span class="math inline">\(^2\)</span> goes up (never goes down) if we add more regressors to the model</li>
+<li>to correct for the fact that this effect is partly mechanical, we can adjust for the number of regressors <span class="math inline">\(k^*\)</span> in the model, <span class="math display">\[R^2_{\text{adj}} = \frac{R^2(n-1)-k^*}{n-k^*-1}\]</span> {<span class="math inline">\(k^*\)</span> is exclusive of a constant term; compare book, where <span class="math inline">\(k=k^*+1\)</span>}</li>
+<li><span class="alert">health warning:</span> it makes little sense to just maximize <span class="math inline">\(R^2\)</span></li>
+</ul>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<ul>
+<li>mathematically, regression estimation involves simple linear (matrix) algebra, which computers can perform near-effortlessly</li>
+<li><img src="images/desmos.png" class="img-fluid" width="100"> can also produce multiple regression, within limits</li>
+<li>drawback, however, is that apart from coefficient estimates, there are no further statistics, like (adjusted) R<span class="math inline">\(^2\)</span> or <span class="math inline">\(t\)</span>-values</li>
+</ul>
+</div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<ul>
+<li>to estimate the model <span class="math inline">\(Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{3i} + U_i\)</span>, use</li>
+</ul>
+<p><code>Analyses &gt; Regression &gt; Linear Regression</code> <br> move variables to:<br> <code>Y</code> <span class="math inline">\(\to\)</span> Dependent variable<br> <code>X1</code>, <code>X2</code> and <code>X3</code> <span class="math inline">\(\to\)</span> Covariates<br></p>
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="specification-issues-multiple-regression" class="level3">
+<h3 class="anchored" data-anchor-id="specification-issues-multiple-regression">Specification Issues Multiple Regression</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Extraneous Regressors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Omitted Regressors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false" href="">Notes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<p>adding more regressors is straightforward, but correlation matters <span class="math display">\[
+Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{3i}+ \ldots + U_i
+\]</span></p><div class="column" style="width:50%;">
+<p><img src="images/multicoll.png" class="img-fluid" width="450"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>if, e.g., <code>exper</code> (labor market experience) is a simple linear transformation of <code>age</code> and <code>educ</code> (number of years in education, starting at age 6), <code>exper=age-educ-6</code>, then they are perfectly correlated</li>
+<li>perfectly <span class="alert">multicollinear</span> variables cannot be separately estimated</li>
+</ul>
+</div>
+</div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<ul>
+<li>Let the true model be <span class="math display">\[Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + U_i\]</span> but leave out <span class="math inline">\(X_2\)</span> <span class="math display">\[Y_i = \beta_0 + \beta_1 X_{1i} + V_i\]</span></li>
+<li>then the error term <span class="math inline">\(V\)</span> sucks up the effect of <span class="math inline">\(X_2\)</span>, because <span class="math display">\[V_i = \beta_2 X_{2i} + U_i\]</span></li>
+<li>If <span class="math inline">\(\beta_2\neq 0\)</span>, and <span class="math inline">\(X_{2i}\)</span> is correlated with <span class="math inline">\(X_{1i}\)</span>, will get <span class="alert">biased</span> estimates of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_0\)</span> (regression line tilts compared to true model, but not clear which way)</li>
+<li>we speak of <span class="alert">omitted variable bias</span></li>
+</ul>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<ul>
+<li>omitted variable bias is troublesome, since wrong conclusions can be made
+<ul>
+<li>e.g.: the gender wage gap (men earning more than women), should be conditional on things like hours worked, experience on the job, but also job description</li>
+<li>not correcting for those factors is like comparing apples and oranges</li>
+</ul></li>
+<li>some data sets have a lot of variables, and it may be tempting to toss everything into the regression that is available
+<ul>
+<li>this can lead to multicollinearity</li>
+</ul></li>
+<li>empirical work is often an art, calling for judicious choices what to include and what not
+<ul>
+<li>carefully looking at the data can aid</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="interpretation-of-coefficients" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-of-coefficients">Interpretation of Coefficients</h3>
+<ul>
+<li>Let the model be <span class="math display">\[Y_i =  \beta_0 +  \beta_1 X_{1i} +  \beta_2 X_{2i} + U_i\]</span></li>
+<li><span class="math inline">\(\beta_1\)</span> measures the partial (aka marginal) effect of <span class="math inline">\(X_1\)</span> on <span class="math inline">\(Y\)</span>, keeping <strong>all other</strong> regressor values <strong>constant</strong>, because it corresponds to the <strong>partial</strong> derivative <span class="math display">\[\frac{\partial  Y_i}{\partial X_{1i}} =  \beta_1\]</span></li>
+</ul>
+<div class="callout callout-style-default callout-note no-icon callout-empty-content callout-titled" title="What is the marginal effect of $X_{1i}$ if $X_{2i} = (X_{1i})^2$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is the marginal effect of <span class="math inline">\(X_{1i}\)</span> if <span class="math inline">\(X_{2i} = (X_{1i})^2\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<ul>
+<li>Let <span class="math inline">\(Y = \ln(W)\)</span> and <span class="math inline">\(X=\ln(Z)\)</span>, then <span class="math inline">\(\beta_1\)</span> measures the <strong>elasticity</strong> of <span class="math inline">\(W\)</span> with respect to <span class="math inline">\(Z\)</span>: <span class="math display">\[\eta_{WZ} = \frac{\partial W}{\partial Z}\cdot \frac{Z}{W} = \frac{\partial \ln(W)}{\partial \ln(Z)} = \frac{\partial Y}{\partial X} = \beta_1\]</span></li>
+</ul>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="dummy-variables" class="level3">
+<h3 class="anchored" data-anchor-id="dummy-variables">Dummy Variables</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">Binary Variables</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href="">Graph</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false" href="">Dummy Variable Trap</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false" href="">Jamovi</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<ul>
+<li>Many variables are not continuous, but binary: they take two values, say 0 and 1.</li>
+<li>Let <span class="math inline">\(D\)</span> be such a dummy variable so the model is <span class="math display">\[Y_i = \beta_0 + \beta_1 D_{i} + \beta_2 X_{2i} + U_i\]</span></li>
+<li>e.g., <span class="math inline">\(D\)</span> measures union membership: 1 - member, 0 - non-member</li>
+<li>The prediction is then based on both <span class="math inline">\(D\)</span> and <span class="math inline">\(X_2\)</span>, <span class="math display">\[\widehat{Y}_i = \left\{ \begin{array}{lll} \widehat{\beta}_0 +\qquad \; \widehat{\beta}_2 X_{2i} &amp; \text{if}&amp; D_{i}=0 \\ \widehat{\beta}_0 + \widehat{\beta}_1 + \widehat{\beta}_2 X_{2i} &amp; \text{if}&amp; D_{i}=1 \end{array} \right.\]</span> since <span class="math inline">\(\widehat{\beta}_0 + \widehat{\beta}_1\)</span> does not depend on <span class="math inline">\(X_2\)</span>, it is like a constant (on the vertical axis)</li>
+</ul>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="?var:desmos-fig-binary" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>sample has two subsamples: union members and non-members</li>
+<li>union members receive higher wages
+<ul>
+<li>edit graph on <img src="images/desmos.png" class="img-fluid" width="100"></li>
+<li>toggle switch ‘showdummy’ to 1</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<ul>
+<li>let education levels be <code>less than high school</code>, <code>high school</code>, <code>college dropout</code>, <code>college</code>, etc.; this variable is meant to be ordinal: we treat values as separate types, and split into four different dummy variables <span class="math display">\[
+\begin{split}
+D_1 = 1 &amp;\quad\text{if}\quad \text{less than high school}\quad (D_1=0, \text{ otherwise}) \\
+D_2 = 1 &amp;\quad\text{if}\quad \text{high school}\quad (D_2=0, \text{ otherwise}) \\
+D_3 = 1 &amp;\quad\text{if}\quad \text{college dropout}\quad (D_3=0, \text{ otherwise}) \\
+D_4 = 1 &amp;\quad\text{if}\quad \text{college}\quad (D_4=0, \text{ otherwise})
+\end{split}
+\]</span></li>
+<li>it is tempting to write down the model as <span class="math display">\[Y_i = \beta_0 + \beta_1 D_{1i} + \beta_2 D_{2i} + \beta_3 D_{3i} + \beta_4 D_{4i} + U_i\]</span></li>
+<li>since <span class="math inline">\(D_4=1-(D_1+D_2+D_3)\)</span>, <span class="math inline">\(D_4\)</span> is perfectly collinear with the (sum of the) other three;
+<ul>
+<li><span class="math inline">\(\to\)</span>model cannot be estimated</li>
+<li><span class="math inline">\(D_4\)</span> (or any other), should be omitted</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-6-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-4-tab">
+<ul>
+<li><p>categorical (including binary) variables are treated using the Factor specification for regression in Jamovi</p></li>
+<li><p>use <code>nlsw88</code>, education variable: <code>grade</code>, coded from 0 to 18 years</p></li>
+<li><p>recode into four categories variable <code>educ</code><br> <code>Transform &gt; Formula Box &gt;</code> <br> <code>=IF(grade&gt;=0 and grade&lt;=11, 1, IF(grade==12, 2, IF(grade&gt;=13 and grade&lt;=15, 3, IF(grade&gt;=16 and grade&lt;=18, 4, -9) ) ) )</code></p></li>
+<li><p>check<br> <code>Analyses &gt; Exploration &gt; Descriptives</code>, move <code>educ</code> <span class="math inline">\(\to\)</span> variables to see a breakdown</p></li>
+<li><p>regress<br> <code>Analyses &gt; Regression &gt; Linear Regression</code>, move <code>educ</code> <span class="math inline">\(\to\)</span> Factors<br></p>
+<ul>
+<li>Jamovi selects one of the categories as omitted category</li>
+<li>this corresponds to including the respective dummy with a coefficient of zero</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="interaction-terms" class="level3">
+<h3 class="anchored" data-anchor-id="interaction-terms">Interaction Terms</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href="">Binary / Categorical Interactions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href="">Binary / Categorical Interactions with Continuous Variable</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false" href="">Jamovi</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<ul>
+<li>Let <span class="math inline">\(D_1\)</span> and <span class="math inline">\(D_2\)</span> be dummy variables <span class="math display">\[Y_i = \beta_0 + \beta_1 D_{1i}  + \beta_2 D_{2i} + \beta_3 (D_{1i} \times D_{2i}) + U_i\]</span></li>
+<li>then <span class="math inline">\(\beta_3\)</span> is the coefficient on an <strong>interaction term</strong></li>
+<li><span class="math inline">\((D_{1i} \times D_{2i})=1\)</span> only if both dummy variables are 1, and hence measures the joint occurrence of both ‘events’</li>
+<li>example: <span class="math inline">\(D_{1}\)</span> – married or not, <span class="math inline">\(D_2\)</span> – south or not
+<ul>
+<li><span class="math inline">\(\beta_1\)</span>: ‘effect’ of being married</li>
+<li><span class="math inline">\(\beta_2\)</span>: ‘effect’ of being from the south</li>
+<li><span class="math inline">\(\beta_1+\beta_3\)</span>: ‘effect’ of being married and from the south</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<ul>
+<li>Let <span class="math inline">\(D\)</span> be a dummy variable and <span class="math inline">\(C\)</span> continuous <span class="math display">\[Y_i = \beta_0 + \beta_1 D_{i}  + \beta_2 C_{i} + \beta_3 (D_{i} \times C_{2}) + U_i\]</span></li>
+<li>then <span class="math inline">\(\beta_3\)</span> is the coefficient on an interaction term, allowing slopes on <span class="math inline">\(C\)</span> to differ</li>
+<li><span class="math inline">\((D_{i} \times C_{i})=C_{i}\)</span> only if dummy variable is 1</li>
+<li>example: <span class="math inline">\(D\)</span> – married or not, <span class="math inline">\(C\)</span> – age, <span class="math inline">\(\beta_2\)</span>: slope of age for unmarried, <span class="math inline">\(\beta_2+\beta_3\)</span>: slope of age for married</li>
+</ul>
+</div>
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>for interaction effects, within the Linear Regression screen
+<ul>
+<li>open <code>&gt; Model Builder</code></li>
+<li>select Predictors to interact</li>
+<li>choose from the second arrow dropdown (interaction: All 2 way)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="images/jamovi_interact.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="statistical-inference" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-inference">Statistical Inference</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+<section id="inference-issues" class="level3">
+<h3 class="anchored" data-anchor-id="inference-issues">Inference: Issues</h3>
+<ul>
+<li>mechanically, we can regress anything on anything</li>
+<li>interpretation of results depends on inference
+<ul>
+<li>statistical inference: can we say anything about a population when we only have a few data points?
+<ul>
+<li>need a random sample, however there is sampling uncertainty (noise)</li>
+<li>want to assess how certain we are that the measured effect actually occurs</li>
+<li>test against a postulated Null Hypothesis, e.g., <span class="math inline">\(H_0: \beta_1 = 0.5\)</span></li>
+</ul></li>
+<li>economic, structural, or causal inference: can we say that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span>?
+<ul>
+<li><a href="http://www.tylervigen.com/spurious-correlations">correlation does not imply causation</a></li>
+<li>may want to compare <span class="math inline">\(Y\)</span> in two parallel universes: one with, and one without the effect of <span class="math inline">\(X\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="sampling-variability" class="level3">
+<h3 class="anchored" data-anchor-id="sampling-variability">Sampling Variability</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href="">Distribution of Estimates</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href="">Statistical Inference</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false" href="">Notes: BLUE<span class="math inline">\(^\star\)</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<ul>
+<li>A <em>random sample</em> is just one realization of a draw from a population, so the sampling process could have thrown up a different set of data points.</li>
+</ul>
+<div class="callout callout-style-default callout-important no-icon callout-empty-content callout-titled" title="We show in exclusively in Class: There will be a distribution of values of $\widehat{\beta}_j$ ($j=0,1$)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>We show in exclusively in Class: There will be a distribution of values of <span class="math inline">\(\widehat{\beta}_j\)</span> (<span class="math inline">\(j=0,1\)</span>)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<ul>
+<li>the <em>standardized coefficient</em> of <span class="math inline">\(\widehat{\beta}_j\)</span> is <span class="math inline">\((\widehat{\beta}_j-\beta_j^0)/\widehat{\sigma}_j\)</span>
+<ul>
+<li><span class="math inline">\(\beta_j^0\)</span> is believed to be the <em>true value</em> of <span class="math inline">\(\beta_j\)</span></li>
+<li><span class="math inline">\(\widehat{\sigma}_j\)</span> is the <em>standard error</em> of the coefficient estimate</li>
+</ul></li>
+<li>the distribution of the standardized coefficient is
+<ul>
+<li>standard normal [<span class="math inline">\({\cal N}(0,1)\)</span>] if <span class="math inline">\(n-k-1\)</span> large</li>
+<li>student-<span class="math inline">\(t\)</span> if <span class="math inline">\(U\sim {\cal N}(0,\sigma^2)\)</span> even if <span class="math inline">\(n-k-1\)</span> small<br></li>
+</ul></li>
+<li>can consider confidence intervals, <span class="math inline">\(t\)</span> (or <span class="math inline">\(z\)</span>) values to perform hypothesis tests, e.g., <span class="math inline">\(H_0: \beta_j=\beta_j^0\)</span></li>
+</ul>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="?var:desmos-fig-inference" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>the <span class="math inline">\(t\)</span>-distribution converges to a normal when <span class="math inline">\((n-k)\to\infty\)</span></li>
+<li>tests typically inquire whether a Null Hypotheses <span class="math inline">\(H_0\)</span> will be rejected<br></li>
+<li>for <span class="math inline">\(n\)</span> large enough, at 5% (10%) significance level, one rejects hypothesis <span class="math inline">\(H_0\)</span> that the coefficient is equal to <span class="math inline">\(\beta_j^0\)</span> if its standardized version falls in the (colored) rejection area of <span class="math inline">\(\pm 1.96 (1.645)\)</span> / outside conf.interval</li>
+</ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Play with the widget; drawn for $k=1$ and $\beta_j^0=0$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Play with the widget; drawn for <span class="math inline">\(k=1\)</span> and <span class="math inline">\(\beta_j^0=0\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note the one-sided interval for <span class="math inline">\(H_0:\beta_j&lt;0\)</span>; get a feel for what statistical significance means; run a regression and check whether the widget gives the correct answer to reject a null!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
+<ul>
+<li>The so-called <span class="smallcaps">Gauss-Markov</span> theorem states that the OLS estimator is BLUE: the best linear unbiased estimator.</li>
+<li>This is a very desirable property since it implies that OLS coefficient estimates have the smallest standard error (or the largest t-values) among all linear unbiased estimators, as long as conditions on the errors are met, including
+<ul>
+<li>errors are uncorrelated, have equal variance and are mean zero</li>
+</ul></li>
+<li>stronger assumptions (such as normally distributed errors, homoskedastic errors, or indpendent errors between sampling units) are not needed</li>
+<li>upshot: if you can use OLS, use it!</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+</section>
+<section id="causal-inference" class="level2">
+<h2 class="anchored" data-anchor-id="causal-inference">Causal Inference</h2>
+<section id="causal-inference-1" class="level3">
+<h3 class="anchored" data-anchor-id="causal-inference-1">Causal Inference</h3>
+<ul>
+<li>the <span class="smallcaps">Mincer</span> earnings regression may not establish a causal pathway education <span class="math inline">\(\to\)</span> wages:
+<ul>
+<li>unobserved ability drives both education and wages</li>
+<li>or more able workers with eventually higher productivity use a college diploma to signal that they should get the high-paid job (unable workers would drop out of college)</li>
+</ul></li>
+<li>the <code>union</code> dummy in a wage regression may be endogenous: those with long-term career ambitions may (1) work harder (2) see the benefit of being in a union</li>
+<li>economists use methods of causal inference that make precise under what assumptions the measured effect is causal</li>
+<li>one of those is a difference estimator, where one group of individuals is ‘treated’ (e.g., given high education’) and a comparison (control) group is not treated (not ‘given high education’), and we hope that the treated are somehow randomly assigned to treatment (e.g., ‘do not choose high education’)
+<ul>
+<li>embed inside regression framework</li>
+</ul></li>
+</ul>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="regression-in-potential-outcomes-framework" class="level3">
+<h3 class="anchored" data-anchor-id="regression-in-potential-outcomes-framework">Regression in Potential Outcomes Framework</h3>
+<ul>
+<li>assume <span class="math inline">\(\text{corr}(D,U)=0\)</span> and write potential outcome model as <span class="math display">\[Y_i = \alpha + \delta_i D_i + U_i\]</span> where <span class="math inline">\(D_i\)</span> is treatment indicator (<span class="math inline">\(D_i=1\)</span>: treated, <span class="math inline">\(D_i=0\)</span> not treated)</li>
+<li><span class="math inline">\(\delta_i\)</span> is individual specific</li>
+<li>potential outcomes for individual <span class="math inline">\(i\)</span> are <span class="math display">\[
+\begin{split}
+Y_{0i}&amp;=\alpha+\qquad U_i \qquad \text{i's outcome if not treated}\\
+Y_{1i}&amp;=\alpha+\delta_i + U_i \qquad \text{i's outcome if treated}
+\end{split}
+\]</span></li>
+<li>randomized experiment, fully under control of designer makes sure that <span class="math inline">\(\text{corr}(D,U)=0\)</span> holds
+<ul>
+<li>medical studies with lab rats</li>
+<li>social science: no rats but people who make choices
+<ul>
+<li>individuals might switch from control into treatment group</li>
+<li>or defy rather than comply with treatment</li>
+<li>selective choices can lead to problems</li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="selection-on-treatment" class="level3">
+<h3 class="anchored" data-anchor-id="selection-on-treatment">Selection on Treatment</h3>
+<ul>
+<li>Treatment participation <span class="math inline">\(D_i\)</span> is related to the causal effect <span class="math inline">\(\delta_i\)</span></li>
+<li>test scores <span class="math inline">\(Y\)</span> and remedial teaching class <span class="math inline">\(D\)</span></li>
+<li>example: teacher assigns to remedial teaching those students who
+<ul>
+<li>benefit most from remedial teaching, but</li>
+<li>would, on average, have the same test scores without remedial teaching as the other students</li>
+</ul></li>
+<li>in this case, regression provides the ATET (avg. treatment eff. on the treated)</li>
+<li>not problematic, but matter of interpretation</li>
+</ul>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="selection-on-unobservables" class="level3">
+<h3 class="anchored" data-anchor-id="selection-on-unobservables">Selection on Unobservables</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true" href="">Issue</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false" href="">Example</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-3" role="tab" aria-controls="tabset-9-3" aria-selected="false" href="">Extension</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<ul>
+<li>Treatment participation <span class="math inline">\(D_i\)</span> correlated to unobserved or unobservable characteristics that are merged into <span class="math inline">\(U_i\)</span></li>
+<li>this selective participation causes biased and inconsistent estimates for treatment effect because <span class="math inline">\(\text{corr}(D,U)\neq 0\)</span> (omitted var.&nbsp;bias: relevant characteristics not included)</li>
+</ul>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<ul>
+<li>teacher assigns those students to remedial teaching
+<ul>
+<li>who make test poorly, i.e.&nbsp;<span class="math inline">\(D_i\)</span> related to <span class="math inline">\(Y_{0i}\)</span></li>
+<li>with learning disorders, i.e.&nbsp;<span class="math inline">\(D_i\)</span> related to student characteristics <span class="math inline">\(X_i\)</span> observed by teacher (but ignored by econometrician)</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-9-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-3-tab">
+<ul>
+<li>instead, consider extended regression model<br>
+<span class="math display">\[Y_i=\alpha+\delta_iD_i+\beta X_i+U_i\]</span> including pre-determined characteristics used for assignment reduces the selection problem
+<ul>
+<li>selection problem only fully solved if <span class="alert">all relevant</span> characteristics used in assignment are included in regression model</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="conclusions">Conclusions</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<ul>
+<li>the linear model is an easy and useful method to quantify the association between two variables</li>
+<li>it may not hold if the association is non-linear</li>
+<li>it has problems (biased estimates) if important regressors are omitted</li>
+<li>it can be used, under specific circumstances, to measure a causal treatment effect; this may coincide with the
+<ul>
+<li>average treatment effect, ATE</li>
+<li>average treatment effect on the treated, ATET</li>
+</ul></li>
+<li>if selection problems in the data are important, it may produce garbage
+<ul>
+<li>applied econometrics offers a wide array of advanced, alternative methods</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
