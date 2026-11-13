@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="ciw_slides_7_2026_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ciw_slides_7_2026_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ciw_slides_7_2026_files/libs/quarto-html/popper.min.js"></script>
+<script src="ciw_slides_7_2026_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ciw_slides_7_2026_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ciw_slides_7_2026_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ciw_slides_7_2026_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ciw_slides_7_2026_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="ciw_slides_7_2026_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="ciw_slides_7_2026_files/libs/quarto-contrib/mathjax3tags/mathjax3.js"></script>
+<script src="ciw_slides_7_2026_files/libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="ciw_slides_7_2026_files/libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
+
+  <meta name="author" content="Stefan Hochguertel">
+  <title>Choices, Inequality and Welfare</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="ciw_slides_7_2026_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ciw_slides_7_2026_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="ciw_slides_7_2026_files/libs/revealjs/dist/theme/quarto-5ac2b89b6b981329a073f05d58b7175d.css">
+  <link href="ciw_slides_7_2026_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ciw_slides_7_2026_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ciw_slides_7_2026_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ciw_slides_7_2026_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="ciw_slides_7_2026_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="ciw_slides_7_2026_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="images/golfcourse.png" data-background-opacity="0.67" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title">Choices, Inequality and Welfare</h1>
+  <p class="subtitle">University Minor Economics</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Stefan Hochguertel
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:s.hochguertel@vu.nl">s.hochguertel@vu.nl</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Vrije Universiteit Amsterdam
+          </p>
+    </div>
+</div>
+
+  <p class="date">Monday, November 16, 2026</p>
+</section>
+<section>
+<section id="measuring-inequality-poverty" class="title-slide slide level1 center" data-background-color="#40666e" data-number="7">
+<h1><span class="header-section-number">7</span> Measuring Inequality &amp; Poverty</h1>
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+<section id="measuring-inequality" class="title-slide slide level2 center" data-number="7.1">
+<h2><span class="header-section-number">7.1</span> Measuring Inequality</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="consumption-income-and-wealth" class="slide level3">
+<h3>Consumption, Income, and Wealth</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Concepts</a></li><li><a href="#tabset-1-2">Measurement</a></li><li><a href="#tabset-1-3">Life Cycle Model</a></li><li><a href="#tabset-1-4">Inequality</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>consumption is main determinant of economic welfare</li>
+<li>income is important to pay for consumption expenditure</li>
+<li>wealth can derive from saving (postponed expenditure)</li>
+</ul>
+<ul>
+<li>all three are choice variables</li>
+<li>consumption (argument of utility function) is typically always positive</li>
+<li>income can be zero, if you dissave or someone else pays for your expenditure
+<ul>
+<li>else, it requires effort (disutility)</li>
+</ul></li>
+<li>wealth can be zero or negative (net worth = assets <span class="math inline">\(-\)</span> liabilities)</li>
+<li>consumption is (typically) not transferable, wealth is—what about income?</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>consumption and income are <em>flow</em> variables</li>
+<li>wealth is a <em>stock</em> variable, and accumulates/decumulate over time</li>
+</ul>
+<ul>
+<li>to quantify inequality, (household) microdata are useful</li>
+<li>survey or administrative data
+<ul>
+<li>since income tax was introduced, governments keep administration on know who reports how much income</li>
+</ul></li>
+<li>consumption only available from self-reports in survey data</li>
+<li>reliable measures of wealth at the micro level are scarce: wealth either from survey data, or, where applicable from (comprehensive) wealth tax</li>
+</ul>
+<ul>
+<li>economic models and statistical measurement suggest:</li>
+</ul>
+<div class="r-stack">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>inequality of consumption <span class="math inline">\(\le\)</span> inequality of income <span class="math inline">\(\le\)</span> inequality of wealth</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:40%;">
+<iframe src="https://edu.nl/kxxx6" width="500" height="500" style="border: 1px solid #ccc" frameborder="0"></iframe>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>consumption, income, and wealth intimately related in a life-cycle model</li>
+<li>consumer derives utility from consumption, and pays expenditure from
+<ul>
+<li>current income</li>
+<li>proceeds (interest) from net saving (saving minus borrowing)</li>
+</ul></li>
+<li>this applies to many periods, over the entire life cycle</li>
+<li>when consumption <span class="math inline">\(&lt;\)</span> current income, saving builds up (net) wealth</li>
+<li>when current income low (e.g., during retirement) consumption can be upheld if paid from decumulating wealth</li>
+<li>saving, dissaving, and borrowing (financial markets participation) is used for <em>consumption smoothing</em> over time</li>
+<li>a smooth consumption profile maximizes intertemporal life-cycle utility</li>
+<li>interest rates (<span class="math inline">\(r\)</span>) and time preference (<span class="math inline">\(\beta\)</span>) are important determinants of the shape of wealth and consumption profiles</li>
+</ul>
+</div></div>
+<!-- end multicolumn setup ................................................ -->
+</div>
+<div id="tabset-1-4">
+<ul>
+<li>in LC framework, inequality can come from
+<ul>
+<li>different positions in LC between people of different ages</li>
+<li>different initial conditions between people of different birth years (or years of labor market entry): cohorts</li>
+<li>differential exposure to interest rate or asset price changes over calendar time</li>
+<li>different time preferences for current consumption, differences in risk attitudes</li>
+<li>differences in retirement planning, pension levels, life expectancy and mortality</li>
+</ul></li>
+<li>in addition, there are
+<ul>
+<li>different education and career profiles, different productivities and labor market experiences</li>
+<li>differences in fertility, bequest motives</li>
+<li>heterogeneous shocks</li>
+</ul></li>
+<li>och mycket mer</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="statistical-distributions" class="slide level3">
+<h3>Statistical Distributions</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">PDF, CDF</a></li><li><a href="#tabset-2-2">Lognormal PDF</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>measuring inequality is about describing and quantifying inequality of some distribution of a variable of interest (income, wealth, consumption) in statistical terms</li>
+<li>let <span class="math inline">\(Y\)</span> denote the variable of interest</li>
+<li>main idea: take the values <span class="math inline">\(Y\)</span> (or a random sample) as given and study the aspects of its distribution that tell how ‘different’ people are from one another</li>
+<li>if <span class="math inline">\(Y\)</span> is continuously distributed, then its distribution can be represented by
+<ul>
+<li>a probability density function (pdf) <span class="math inline">\(f_Y(y)\)</span>, or</li>
+<li>a cumulative distribution function (cdf) <span class="math inline">\(F_Y(y)=\int_{\min\{y\}}^y f_Y(z) \text{d}z\)</span></li>
+</ul></li>
+</ul>
+<div class="r-stack">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>how to choose <span class="math inline">\(f_Y()\)</span> so it fits the data?</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://edu.nl/kxdpa" width="600" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>lognormal distribution often used to model continuous economic variables such as income or consumption</li>
+<li>a log-normally distributed random variable <span class="math inline">\(X\)</span> has a natural logarithm <span class="math inline">\(\ln(X)\)</span> that is normally distributed</li>
+<li>the pdf <span class="math inline">\(f(x)\)</span> has two parameters, a location parameter <span class="math inline">\(\mu\)</span> and a spread parameter <span class="math inline">\(\sigma\)</span></li>
+<li>those determine metrics for location such as mean, median, mode, for spread, such as standard deviation, or for shape, such as skewness (for definitions, see <a href="https://en.wikipedia.org/wiki/Log-normal_distribution" target="_blank">Wikipedia</a>)</li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Play! Change <span class="math inline">\(\mu\)</span> and/or <span class="math inline">\(\sigma\)</span>, pull green dot to see <span class="math inline">\(F(b)=\int_{0}^{b}f(x)dx = \Pr(x\le b)\)</span></strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="lorenz-curve-and-gini-coefficient" class="slide level3">
+<h3><span class="smallcaps">Lorenz</span> Curve and <span class="smallcaps">Gini</span> Coefficient</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Description</a></li><li><a href="#tabset-3-2">Illustration</a></li><li><a href="#tabset-3-3">2 Groups</a></li><li><a href="#tabset-3-4">Alternative Measures<span class="math inline">\(^\star\)</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li><p>most popular measure for inequality are <span class="smallcaps">Gini</span> coefficient and <span class="smallcaps">Lorenz</span> curve <span class="math inline">\(\Lambda\)</span></p></li>
+<li><p><span class="math inline">\(\Lambda\)</span> encompasses all values of the distribution and can be derived from the pdf or cdf</p></li>
+<li><p>starting point are the values of <span class="math inline">\(Y\)</span> in <em>ascending</em> order</p></li>
+<li><p>determine <span class="math inline">\(p\)</span>, the cumulative percentile of individuals considered (runs from 0 to 100%)</p></li>
+<li><p><span class="math inline">\(\Lambda\)</span> measures for each <span class="math inline">\(p\)</span> the cumulative share of income in total income (runs from 0 to 100%)</p></li>
+<li><p><span class="math inline">\(\Lambda\)</span> is typically below the 45<span class="math inline">\(^\circ\)</span>line, monotonically increasing and convex</p></li>
+<li><p><span class="smallcaps">Gini</span> coefficient of inequality is based on the cumulative difference between the line of equality and the <span class="smallcaps">Lorenz</span> curve</p></li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://edu.nl/tn6wp" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Play!</strong></p>
+</div>
+<div class="callout-content">
+<p>walkthrough: simulate different income distributions with varying degrees of inequality (reflected in the <span class="smallcaps">Gini</span> coefficient) by sliding the movable dot.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The <span class="smallcaps">Lorenz</span> curve is named after <a href="https://en.wikipedia.org/wiki/Max_O._Lorenz" target="_blank">Max <span class="smallcaps">Lorenz</span> (1876-1959).</a></strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The <span class="smallcaps">Gini</span> coefficient is named after <a href="https://en.wikipedia.org/wiki/Corrado_Gini" target="_blank">Corrado <span class="smallcaps">Gini</span> (1884-1965).</a></strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-3-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://edu.nl/mptvt" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Two-group Gini</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Figure suggests very easy way to calculate the <span class="smallcaps">Gini</span> coefficient: use difference of coordinates of income distribution point <span class="math inline">\(X\)</span>.</p></li>
+<li><p>Reason: red and yellow triangle have same area, and height of yellow triangle corresponds to vertical distance between points <span class="math inline">\(P\)</span> and <span class="math inline">\(X\)</span> in red triangle: <span class="math inline">\(0.70−0.25=0.45\)</span>. Area <span class="math inline">\(A= \dfrac{1}{2} \cdot 0.45 \cdot 1.0 = 0.225.\)</span></p></li>
+<li><p>Verify by calculating areas of triangles.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-3-4">
+<p>There are many different statistical summary measures of inequality. The following are examples of measures conforming to the</p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><span class="smallcaps">Pigou-Dalton</span> Principle</strong></p>
+</div>
+<div class="callout-content">
+<p>under a transfer from a rich to a poor individual that preserves both ranking of individuals and total income, inequality must decrease.</p>
+</div>
+</div>
+</div>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><span class="math display">\[\begin{eqnarray*}
+\mbox{CV}^x   &amp;=&amp; \frac{\sigma}{\mu\sqrt{N-1}} \\
+\mbox{Gini} &amp;=&amp; \frac{1}{2N^2\mu} \sum_i \sum_j | y_i-y_j|
+\end{eqnarray*}\]</span></p>
+</div><div class="column" style="width:55%;">
+<p><span class="math display">\[\begin{eqnarray*}
+\mbox{Theil} &amp;=&amp; \frac{1}{N \ln N} \sum \frac{y_i}{\mu} \ln \frac{y_i}{\mu} \\
+^\dagger\mbox{Atkinson}_\varepsilon &amp;=&amp; 1 - \left[\frac{1}{N} \sum \left( \frac{y_i}{\mu} \right)^{1-\varepsilon} \right]^{\frac{1}{1-\varepsilon}}
+\end{eqnarray*}\]</span></p>
+</div><p><span class="math inline">\(^x\)</span>CV is the coefficient of variation (altogether different from the concept of compensating variation) <span class="math inline">\(^\dagger\varepsilon\)</span> is a policy parameter that expresses society’s degree of <span class="alert">inequality aversion</span></p>
+</div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+
+<section id="income-inequality" class="title-slide slide level2 center" data-number="7.2">
+<h2><span class="header-section-number">7.2</span> Income Inequality</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="measuring-income-inequality-gini-coefficient" class="slide level3">
+<h3>Measuring Income Inequality: <span class="smallcaps">Gini</span> Coefficient</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><span class="smallcaps">Gini</span></a></li><li><a href="#tabset-4-2"><span class="math inline">\(\Delta\)</span><span class="smallcaps">Gini</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<iframe src="https://ourworldindata.org/grapher/gini-index-around-2015-1990-2015-countries-vs-gini-index-around-1990-1990-2015-countries" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+</div>
+<div id="tabset-4-2">
+<iframe src="https://ourworldindata.org/grapher/reduction-in-income-inequality?country=DNK~NLD~GBR~USA&amp;tab=chart" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="measuring-income-inequality-top-1-share" class="slide level3">
+<h3>Measuring Income Inequality: Top 1% Share</h3>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://ourworldindata.org/grapher/income-share-top-1-before-tax-wid-extrapolations?time=1910..latest&amp;country=USA~CAN~GBR~ITA" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
+</div><div class="column" style="width:50%;">
+<iframe src="https://ourworldindata.org/grapher/income-share-top-1-before-tax-wid-extrapolations?time=1910..latest&amp;country=JPN~SWE~ESP~FRA~NLD" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</section>
+<section id="income-mobility-across-generations" class="slide level3">
+<h3>Income Mobility Across Generations</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">IGE</a></li><li><a href="#tabset-5-2">NL Evidence 1</a></li><li><a href="#tabset-5-3">NL Evidence 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<ul>
+<li><strong>Intergenerational income elasticity (IGE):</strong> how strongly are children’s adult earnings associated with their parents’ earnings?</li>
+</ul>
+<p><span class="math display">\[
+\ln(y_i^{child}) = \alpha + \beta\ln(y_i^{parent}) + \varepsilon_i
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\beta\)</span> is the IGE (compare regression lecture and log-form of elasticity)</li>
+<li>measures persistence</li>
+<li>not indicative of a causal effect of parental income on children’s economic success</li>
+</ul>
+<ul>
+<li>alternative: regress children’s income <em>rank</em> on parents’ income <em>rank</em>
+<ul>
+<li>slope measures rank persistence <span class="math inline">\(\neq\)</span> IGE</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-5-2">
+<ul>
+<li>Carmichael et al.&nbsp;(2020): links income and earnings register data for 28-year-olds in 2016 to their parents’ income and earnings in 2003</li>
+</ul>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:33%;">
+<ul>
+<li>Transitions: high mobility</li>
+</ul>
+<p><img data-src="images/Carmichael_2020EL_T1.png" style="width:95.0%"></p>
+<div style="font-size: 67%;">
+<p><em>Source:</em> Carmichael, F. et al.&nbsp;(2020). “Evidence on intergenerational income transmission using complete Dutch population data.” <em>Economics Letters</em>, 189, 108996. <a href="https://www.sciencedirect.com/science/article/pii/S016517652030032X" target="_blank">ScienceDirect</a></p>
+</div>
+</div><div class="column" style="width:67%;">
+<ul>
+<li>IGE estimates: low persistence</li>
+</ul>
+<p><img data-src="images/Carmichael_2020EL_T3_T5.png" style="width:95.0%"></p>
+</div></div>
+<!-- end multicolumn setup ................................................ -->
+</div>
+<div id="tabset-5-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:25%;">
+<ul>
+<li><p>Colagrossi et al.&nbsp;(2023): links administrative income and education data across three generations and for multiple years</p></li>
+<li><p>replicate Carmichael study and allow for more years, finding higher persistence</p></li>
+<li><p>in general, NL mobility high in international comparison, but more ‘central Europe’ than ‘Nordic’</p></li>
+</ul>
+<div style="font-size: 67%;">
+<p><em>Source:</em> Colagrossi, M., Geraci, A., &amp; Mazzarella, G. (2023). “Intergenerational mobility in the Netherlands: models, outcomes and trends.” <em>Journal of Economic Inequality</em>, 21(4), 775–788. <a href="https://doi.org/10.1007/s10888-023-09569-7" target="_blank">https://doi.org/10.1007/s10888-023-09569-7</a></p>
+</div>
+</div><div class="column" style="width:75%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Colagrossi_2023JEI_T2.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+<!-- end multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="inequality-and-policy" class="slide level3">
+<h3>Inequality and Policy</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">NL Distributions of Income and Tax Revenue</a></li><li><a href="#tabset-6-2">NL Benefits</a></li><li><a href="#tabset-6-3">Redistribution</a></li><li><a href="#tabset-6-4">Equality of Opportunity</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">pie title gross disposable income by pop. decile
+"1st"  :  5490
+"2nd"  :  16724
+"3rd"  :  22296
+"4th"  :  27698
+"5th"  :  34577
+"6th"  :  41571
+"7th"  :  48815
+"8th"  :  56555
+"9th"  :  67701
+"10th" : 118185
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">pie title taxes on income and wealth
+"1st"  :  5037    
+"2nd"  :  1829    
+"3rd"  :  2166    
+"4th"  :  3103    
+"5th"  :  4364    
+"6th"  :  5935    
+"7th"  :  8003    
+"8th"  : 11121 
+"9th"  : 16489 
+"10th" : 45276
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div><div style="font-size: 80%;">
+<p><em>data source:</em> CBS Statline; 2023</p>
+</div>
+</div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-6-2">
+<table>
+<tbody><tr><th scope="col">Totals for 2025</th><th scope="col">Number (m)</th><th scope="col">Awards (b€)</th></tr>
+ </tbody><tbody><tr><td>Childcare allowance</td><td>0.72</td><td>
+   <p>5.14</p>
+   </td></tr><tr><td>Rent allowance</td><td>1.59</td><td>5.28</td></tr><tr><td>Health care allowance</td><td>4.76</td><td>6.52</td></tr><tr><td>Child-related budget</td><td>1.08</td><td>4.61</td></tr><tr><td>Totaal</td><td>8.15</td><td>
+   <p>21.54</p>
+   </td></tr><tr><td>Unique households</td><td>6.0</td><td><p></p></td>
+</tr></tbody>
+</table>
+<div style="font-size: 80%">
+<p><em>source:</em> <a href="https://www.overtoeslagen.nl" target="_blank">Ministry of Finance, 2025</a></p>
+</div>
+</div>
+<div id="tabset-6-3">
+<ul>
+<li>If SWF suggests that income inequality is of policy concern, then redistribution, typically from the rich to the poor, is a possible choice</li>
+<li>note: such redistribution does not tackle the causes of inequality, rather its symptoms</li>
+<li>distribution of incomes <span class="math inline">\(\{y_1,\ldots,y_N\}\)</span></li>
+<li>Budget-neutral redistribution: tax everyone using proportional income tax <span class="math inline">\(\tau\)</span>, redistribute total tax revenue <span class="math inline">\(\sum_i \tau y_i\)</span> as a lump sum to everyone: <span class="math display">\[
+\mbox{after-tax income } \tilde{y}_i = y_i(1-\tau)+\frac{\tau \sum_i  y_i}{N}
+\]</span></li>
+<li>assume <em>no behavioral response</em>, i.e., mean income does not change with redistribution</li>
+</ul>
+</div>
+<div id="tabset-6-4">
+<ul>
+<li>low intergenerational mobility may point to low equality of opportunity</li>
+<li>policy can break the strong link between individuals’ economic wellbeing and their parental background</li>
+</ul>
+<ul>
+<li>prenatal and parental care
+<ul>
+<li>universal access to health care for all (becoming) mothers and children</li>
+<li>paid parental leave (also for fathers)</li>
+</ul></li>
+<li>subsidized child care
+<ul>
+<li>encourages labor market participation of lone mothers</li>
+<li>encourages inclusion for children from disadvantaged demographics</li>
+</ul></li>
+<li>mandatory primary (and secondary) schooling, equitable school funding policies</li>
+<li>access to secondary and tertiary education</li>
+<li>study loan or grant systems</li>
+<li>anti-discrimination labor market regulation</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+
+<section id="wealth-inequality" class="title-slide slide level2 center" data-number="7.3">
+<h2><span class="header-section-number">7.3</span> Wealth Inequality</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="measuring-wealth-inequality" class="slide level3">
+<h3>Measuring Wealth Inequality</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Issue</a></li><li><a href="#tabset-7-2">PDF</a></li><li><a href="#tabset-7-3">Structure</a></li><li><a href="#tabset-7-4"><span class="smallcaps">Lorenz</span> Curve</a></li><li><a href="#tabset-7-5">Shares</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<ul>
+<li>lognormal pdf and Lorenz curve suitable to depict income or consumption</li>
+</ul>
+<ul>
+<li>wealth distribution compared to income or consumption distribution
+<ul>
+<li>much more skewed</li>
+<li>many more zeros (in both surveys and tax records)</li>
+<li>some (large) negative values (incl.&nbsp;business owners)</li>
+<li>multimodality</li>
+</ul></li>
+<li>log-normal distribution not applicable</li>
+</ul>
+<ul>
+<li>Negative net wealth: households in lower tail often have debts greater than assets</li>
+<li>Zero net wealth:
+<ul>
+<li>assets = debts <span class="math inline">\(\neq\)</span> 0 (handful)</li>
+<li>assets = debts <span class="math inline">\(=\)</span> 0 (nonreporting?)</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-7-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/DHSwealth.png" style="width:90.0%"></p>
+<div style="font-size: 67%;">
+<p><em>Data Source:</em> DNB Household Survey, 2017</p>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>denote <span class="math inline">\(W\)</span>: wealth measured in $</li>
+<li><em>inverse hyperbolic sine</em> (IHS) transformation <span class="math display">\[ w = \ln(W + \sqrt{W^2+1}) \qquad\text{or}\qquad w = \operatorname{asinh}(W)\]</span></li>
+</ul>
+<iframe src="https://www.desmos.com/calculator/daobhw34dy?embed" width="500" height="250" style="border: 1px solid #ccc"></iframe>
+</div></div>
+<!-- end multicolumn setup ................................................ -->
+</div>
+<div id="tabset-7-3">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Martinez_2023WID_F1.png" class="quarto-figure quarto-figure-center" style="width:58.0%"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-7-4">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/CBS_welvaartNL2022_F722.png" style="width:90.0%"></p>
+<div style="font-size: 67%;">
+<p><em>Source:</em> <a href="https://longreads.cbs.nl/materiele-welvaart-in-nederland-2022/ongelijkheid-in-financiele-welvaart/" target="_blank">CBS (2022)</a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>with positive values only, <span class="smallcaps">Lorenz</span> curve <span class="math inline">\(\Lambda\)</span> bounded in <span class="math inline">\([0,1]\)</span> and monotonically increasing</li>
+<li>with negative and zero values, <span class="math inline">\(\Lambda\)</span> may have decreasing and flat parts</li>
+<li>with negative values, standard <span class="smallcaps">Gini</span> coefficient can exceed 1, making it hard to interpret; statistical literature suggests workarounds (normalized versions)</li>
+</ul>
+<ul>
+<li>CBS (2020): Gini net worth: <span class="math inline">\(\approx 0.76\)</span> (ex. housing: <span class="math inline">\(\approx 0.87\)</span>)</li>
+<li>6.6% of households had negative net wealth
+<ul>
+<li>first-time home-buyers had up to 120% mortgage of original house value</li>
+</ul></li>
+</ul>
+</div></div>
+<!-- end multicolumn setup ................................................ -->
+</div>
+<div id="tabset-7-5">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/Martinez_2023WID_F2.png" style="width:90.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/Martinez_2023WID_F3.png" style="width:90.0%"></p>
+</div><div style="font-size: 67%;">
+<p><em>Source:</em> <a href="https://wid.world/document/wealth-inequality-in-the-netherlands-wid-world-technical-note-2023-13/" target="_blank">World Inequality Database (2023)</a></p>
+</div>
+</div>
+<!-- end multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+</section>
+<section id="reasons-for-wealth-inequality" class="slide level3">
+<h3>Reasons for Wealth Inequality</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Concept</a></li><li><a href="#tabset-8-2">Sources</a></li><li><a href="#tabset-8-3">Transfers</a></li><li><a href="#tabset-8-4">Returns</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<ul>
+<li>wealth is a stock concept
+<ul>
+<li>net worth generates capital income, reinforcing accumulation</li>
+<li>net worth: security, economic power, transfer between people</li>
+</ul></li>
+<li>wealth typically measured at household level</li>
+<li>structure matters: real estate vs.&nbsp;financial wealth and debts</li>
+</ul>
+</div>
+<div id="tabset-8-2">
+<ul>
+<li>saving over the life cycle (age)</li>
+<li>homeownership, house-price appreciation, access to mortgage finance</li>
+<li>capital gains on financial assets (stocks, ETFs etc.)</li>
+<li>inheritances and gifts</li>
+<li>taxation, tax avoidance (tax planning)</li>
+</ul>
+</div>
+<div id="tabset-8-3">
+<ul>
+<li>inter vivos (ìncluding gifts), post mortem (inheritances/bequests)
+<ul>
+<li>post mortem partly ‘accidental’</li>
+</ul></li>
+<li>CBS (2020): €17.7b inheritances and €13.1b gifts</li>
+<li>often: transfers 1/5 - 1/3 of private net worth</li>
+<li>transfers reinforce inequality:
+<ul>
+<li>transfers arrive on top of recipients’ existing resources</li>
+<li>large transfers concentrated among rich families</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-8-4">
+<ul>
+<li>the rich earn higher average returns
+<ul>
+<li>portfolio choice effect
+<ul>
+<li>more likely to own businesses and equities</li>
+</ul></li>
+<li>behavorial effect
+<ul>
+<li>more diversified portfolios</li>
+<li>more risk taking</li>
+</ul></li>
+<li>sophistication and access to advice
+<ul>
+<li>tax planning (financial advisors)</li>
+<li>tax-induced portfolios (‘box 2’)</li>
+</ul></li>
+</ul></li>
+<li>evidence
+<ul>
+<li>Norway: persistent household-level return heterogeneity and higher average returns at the top</li>
+<li>Netherlands: gains on substantial business interests has been important in the growth of wealth at the top</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+
+<section id="poverty" class="title-slide slide level2 center" data-number="7.4">
+<h2><span class="header-section-number">7.4</span> Poverty</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="poverty-1" class="slide level3">
+<h3>Poverty</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Definition</a></li><li><a href="#tabset-9-2">Aim of Measurement</a></li><li><a href="#tabset-9-3">Policies</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<p>Poverty, specifically</p>
+<ul>
+<li>lack of command over commodities
+<ul>
+<li>“… a severe constriction of the choice set [over commodities]” (<span class="smallcaps">Harold Watts</span>)</li>
+</ul></li>
+<li>Lack of specific consumptions in terms of quantity or quality
+<ul>
+<li>e.g.&nbsp;too little food energy intake, too little of specific nutrients, leaking roof, …</li>
+</ul></li>
+</ul>
+<p>Poverty, more generally</p>
+<ul>
+<li>lack of “welfare” in wider sense
+<ul>
+<li>e.g.&nbsp;lack of “capability”: inability to achieve certain “functionings”</li>
+<li>“beings and doings” (Amartya <span class="smallcaps">Sen</span>)</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-9-2">
+<ul>
+<li>supply evidence / quantitative data to inform policy on the extent, developments/trends, and severity of poverty</li>
+<li>keep poor people on the political agenda</li>
+</ul>
+</div>
+<div id="tabset-9-3">
+<ul>
+<li>Growth strategy
+<ul>
+<li>Has poverty increased? Did growth help the poor? How did relative price changesaffect the poor? What is the impact of food price fluctuations? Who were the losers and who were the gainersfrom economy-wide policy reforms?</li>
+</ul></li>
+<li>Social Spending
+<ul>
+<li>Who uses public services? At what cost? Who benefits from government subsidies? On average, versus at the margin? Who will be hurt by retrenchment?</li>
+</ul></li>
+<li>Targeted Interventions
+<ul>
+<li>Who are the target groups? How should transfers be allocated? How much impact will they have on poverty?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="canonical-poverty-measures" class="slide level3">
+<h3>Canonical Poverty Measures</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Measures</a></li><li><a href="#tabset-10-2">Graph</a></li><li><a href="#tabset-10-3">Math<span class="math inline">\(^\star\)</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1">
+<p>Canonical statistical measures of poverty (Poverty Indices, PI)</p>
+<ul>
+<li><strong>headcount ratio</strong> (HC): what percentage of population has income below poverty line?
+<ul>
+<li>easy to measure and understand</li>
+</ul></li>
+<li><strong>poverty gap</strong> (PG): what is the average relative distance of the poor from the poverty line?
+<ul>
+<li>reflects (average) depth of poverty</li>
+</ul></li>
+<li><strong>squared PG</strong> (SPG): what is the average relative squared distance of the poor from the poverty line?
+<ul>
+<li>reflects severity of poverty, as it gives the highest weight to the poorest</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-10-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<iframe src="https://edu.nl/ujtqp" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>the graph shows the three canonical measures</li>
+<li>for a mathematical expression check the Math tab</li>
+</ul>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Get the hang of poverty measures!</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>shift the poverty line to see how poverty measures change</li>
+<li>click the links to see the implicit weighting scheme</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-10-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The <span class="smallcaps">Foster-Greer-Thorbecke</span> (FGT) index captures all three PIs <span class="math display">\[
+FGT_{\alpha }={\frac {1}{N}}\sum _{i=1}^{H}\left({\frac {z-y_{i}}{z}}\right)^{\alpha }
+\]</span></p>
+<ul>
+<li><span class="math inline">\(y_i\)</span> individual income, <span class="math inline">\(i=1,\ldots,N\)</span></li>
+<li><span class="math inline">\(z\)</span> poverty line</li>
+<li><span class="math inline">\(N\)</span> number of people</li>
+<li><span class="math inline">\(H\)</span> number of poor (incomes below <span class="math inline">\(z\)</span>)</li>
+<li><span class="math inline">\(\alpha\)</span>: definitional parameter, <span class="math inline">\(\in \{0,1,2\}\)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><span class="math inline">\(\alpha=0\)</span>: HC: <span class="math inline">\(\displaystyle FGT_{0} = \frac{H}{N}\)</span></li>
+<li><span class="math inline">\(\alpha=1\)</span>: PG: <span class="math inline">\(\displaystyle FGT_{1} = {\frac {1}{N}}\sum _{i=1}^{H}\left({\frac {z-y_{i}}{z}}\right) = FGT_{0} \cdot \bar{y}_p\)</span>
+<ul>
+<li><span class="math inline">\(\bar{y}_p\)</span> avg income of the poor</li>
+</ul></li>
+<li><span class="math inline">\(\alpha=2\)</span>: SPG: <span class="math inline">\(\displaystyle FGT_{2} = {\frac {1}{N}}\sum _{i=1}^{H}\left({\frac {z-y_{i}}{z}}\right)^{2}\)</span></li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="poverty-relief-measures-and-consumer-choice" class="slide level3">
+<h3>Poverty Relief Measures and Consumer Choice</h3>
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Tools</a></li><li><a href="#tabset-12-2">In-Kind</a></li><li><a href="#tabset-12-3">CV</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1">
+<ul>
+<li>transfers are used to address poverty to targeted and identified individuals
+<ul>
+<li>in cash or in kind</li>
+</ul></li>
+<li>cash transfers can be used to
+<ul>
+<li>move individuals back to the poverty line in terms of disposable income
+<ul>
+<li>e.g., in inflationary periods</li>
+</ul></li>
+<li>counteract a price hike on specific goods
+<ul>
+<li>e.g., using the idea of <strong>compensating variation</strong></li>
+</ul></li>
+</ul></li>
+<li>in-kind transfers for particular expenditure categories (necessitities)
+<ul>
+<li>e.g., social/council housing; food stamps/coupons/special debit cards; reduced public transport fares; access to health services</li>
+<li>in-kind transfers reduce the choice set</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-12-2">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/inkind.png" style="width:90.0%"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>in-kind benefit is tied to consumption of good <span class="math inline">\(x_1\)</span></li>
+<li>it cannot be (directly) exchanged for good <span class="math inline">\(x_2\)</span>
+<ul>
+<li>there is a kink at <span class="math inline">\(E_2\)</span> on the red BC</li>
+<li>individual might choose to consume at the kink</li>
+</ul></li>
+<li>cash benefit is fully fungible (grey BC), there is no kink, and it might afford higher utility at <span class="math inline">\(E_3\)</span></li>
+</ul>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+<div id="tabset-12-3">
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>recall that CV restores welfare to the level of utility that was obtained before the price hike</li>
+<li>this involves a money transfer to recipients</li>
+<li>the size of the transfer is meant not to make recipients better off than they had been before the price hike</li>
+<li>instead it corresponds to the cheapest compensation from the point of view of the government that leaves the recipient indifferent to experiencing and not experiencing the price hike</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<!-- panel tabset setup ................................................... -->
+<div class="panel-tabset">
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">1</a></li><li><a href="#tabset-11-2">2</a></li><li><a href="#tabset-11-3">3</a></li><li><a href="#tabset-11-4">4</a></li><li><a href="#tabset-11-5">5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1">
+<p><img data-src="images/shec_compvar_Page_04.png"></p>
+</div>
+<div id="tabset-11-2">
+<p><img data-src="images/shec_compvar_Page_05.png"></p>
+</div>
+<div id="tabset-11-3">
+<p><img data-src="images/shec_compvar_Page_06.png"></p>
+</div>
+<div id="tabset-11-4">
+<p><img data-src="images/shec_compvar_Page_07.png"></p>
+</div>
+<div id="tabset-11-5">
+<p><img data-src="images/shec_compvar_Page_08.png"></p>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<p><strong>Example</strong> Recipient Jake and mayor Tom</p>
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="anti-poverty-policy-and-labor-supply" class="slide level3">
+<h3>Anti-Poverty Policy and Labor Supply</h3>
+<ul>
+<li>aim: provide consumption floor (poverty line)
+<ul>
+<li>encouragement to earn own income (self-reliance)</li>
+</ul></li>
+<li>wide array of canonical policy tools:
+<ul>
+<li>universal basic income</li>
+<li>minimum wage</li>
+<li>means-tested benefits</li>
+<li>negative income tax</li>
+<li>earned-income tax credit</li>
+<li>benefit notches</li>
+</ul></li>
+</ul>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Policy can have unintended consequences (e.g., through perverse incentives)</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="nonlinearities-and-labor-supply-dis-incentives" class="slide level3">
+<h3>Nonlinearities and Labor Supply (Dis-)Incentives</h3>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:45%;">
+<iframe src="https://edu.nl/am9p3" width="460" height="600" style="border: 1px solid #ccc" frameborder="0"></iframe>
+</div><div class="column" style="width:55%;">
+<div class="panel-tabset">
+<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">0</a></li><li><a href="#tabset-13-2">1</a></li><li><a href="#tabset-13-3">2</a></li><li><a href="#tabset-13-4">3</a></li><li><a href="#tabset-13-5">4</a></li><li><a href="#tabset-13-6">5</a></li><li><a href="#tabset-13-7">6</a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1">
+<ul>
+<li>labor supply model applying to low earnings worker</li>
+<li>under many policy alternatives, budget constraints become nonlinear, interacting in complex ways with work attitude (leisure preference)</li>
+<li><em>hint:</em> move through walktrough and tabs in tandem</li>
+</ul>
+</div>
+<div id="tabset-13-2">
+<ul>
+<li>Universal Basic Income is an unconditional fixed benefit
+<ul>
+<li>possibly while removing all other conditional transfers</li>
+</ul></li>
+<li>UBI shifts the budget constraint up
+<ul>
+<li>there may be income effects</li>
+<li>no substitution effects</li>
+</ul></li>
+<li>in practice, UBI is almost never truly universal</li>
+</ul>
+</div>
+<div id="tabset-13-3">
+<ul>
+<li>minimum wage has, as any other wage rate <span class="math inline">\(w\)</span> change two effects on labor supply
+<ul>
+<li>an income effect</li>
+<li>a substitution effect</li>
+</ul></li>
+<li>it is possibile labor supply eventually decreases when the income effect dominates the substitution effect at high enough wage rates</li>
+</ul>
+</div>
+<div id="tabset-13-4">
+<ul>
+<li>means-tested benefit should bring individual up to the poverty line</li>
+<li>but will be cut dollar-for-dollar as recipient’s own means (earnings) rise</li>
+<li>implies implicit tax rate of 100%
+<ul>
+<li>2 kinks in BC, expecially at participation margin where people might stick</li>
+<li>induced non-participation, and poverty trap</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-13-5">
+<ul>
+<li>Negative income tax has a guaranteed minimum income, irrespective of labor supply</li>
+<li>then taxes away the benefits at a rate below 100%</li>
+<li>mitigates somewhat the sharp disincentive to work of a means test if leisure preference not too strong</li>
+</ul>
+</div>
+<div id="tabset-13-6">
+<ul>
+<li>Earned income tax credit has three phases</li>
+</ul>
+<ol type="1">
+<li>phase-in: wage subsidy increases <span class="math inline">\(w\)</span></li>
+<li>flat part: wage subsidy ceased</li>
+<li>phase-out: wage tax decreases <span class="math inline">\(w\)</span></li>
+</ol>
+<ul>
+<li>3 kinks, first one is most salient
+<ul>
+<li>keeps incentive to work at small number of hours</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-13-7">
+<ul>
+<li>if program eligibility is tied to an earnings ceiling, earning a dollar above the ceiling may mean complete loss of program benefits</li>
+<li>resulting non-convex ‘notch’ represents a very sharp discontinuity
+<ul>
+<li>disincentivizes additional labor supply even for those with modest preference for leisure</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- end panel tabset setup ............................................... -->
+</div></div>
+<!-- END multicolumn setup ................................................ -->
+<!-- ## NEW SECTION ####################################################### -->
+</section>
+
+<section id="conclusions" class="title-slide slide level2 unnumbered center">
+<h2>Conclusions</h2>
+<!-- ** NEW SLIDE ********************************************************* -->
+</section>
+<section id="summary" class="slide level3">
+<h3>Summary</h3>
+<ul>
+<li><span class="smallcaps">Lorenz</span> curve and <span class="smallcaps">Gini</span> coefficient as standard statistical measure for inequality assessment</li>
+<li>income distribution often well-described by log-normal model</li>
+<li>wealth distribution is very different from income distribution, its features require special attention</li>
+<li>redistribution of income or wealth outcomes is social welfare-enhancing under a convex SWF</li>
+<li>achieving equality of opportunity may need structural reform to safeguard equal access to healthcare, child care, education, finance, work</li>
+<li>poverty policy aims at providing a consumption floor</li>
+<li>in-kind provision: targeting and self-selection of the needy</li>
+<li>unintended side effect of means testing: discourage effort taking</li>
+<li>benefit design can dis-/encourage labor supply (participation)</li>
+</ul>
+
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/VUnobg.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>University Minor Economics • Choices, Inequality and Welfare • © 2026-27 Stefan Hochguertel</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ciw_slides_7_2026_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1500,
+
+        height: 800,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 3.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+              if (!link.classList.contains('no-external-icon')) {
+                // default icon
+                link.classList.add("external");
+              }
+            }
+          }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
